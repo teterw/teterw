@@ -33,7 +33,7 @@ ABOUT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into 
          "tech and always learning something new by building projects. i'm a hobbyist "
          "with a ton of hobbies, and i'm also addicted to typing.")
 BIRTHDAY = "15 / 05"  # day / month
-FAVORITE_ARTISTS = ["malcolm todd", "macq", "arctic monkeys"]
+FAVORITE_ARTISTS = ["malcolm todd", "MacQ", "arctic monkeys"]
 
 FONT = "'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace"
 
