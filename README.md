@@ -103,11 +103,10 @@ and this README gets redrawn. Refresh the page after ~30 seconds to see the new 
 </details>
 <!-- GAME:END -->
 
-## Contribution snake
+## Currently typing
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/teterw/teterw/output/github-snake-dark.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/teterw/teterw/output/github-snake.svg" />
-</picture>
+<p align="center">
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/typing/typing.svg" width="100%" alt="Monkeytype-style typing animation" /></a>
+</p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4fc3f7,50:a66cff,100:ff6ec7&height=120&section=footer" width="100%"/>
