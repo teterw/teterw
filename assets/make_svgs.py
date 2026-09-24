@@ -3,7 +3,7 @@
     GH_TOKEN=$(gh auth token) python assets/make_svgs.py
 
 - header.svg      Monkeytype-style top bar + test config bar
-- typing.svg      "about me" typing test, with live wpm and latest commit
+- typing.svg      "about me" typing test, with birthday and latest commit
 - monkeytype.svg  live personal bests from the Monkeytype API
 - nowplaying.svg  last played song from Last.fm (needs LASTFM_USER + LASTFM_API_KEY)
 - activity.svg    GitHub contributions heatmap, streaks, and top languages
@@ -30,7 +30,9 @@ GITHUB_USER = "teterw"
 MONKEYTYPE_USER = "teterw"
 
 ABOUT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into "
-         "tech and always learning something new by building projects.")
+         "tech and always learning something new by building projects. i'm a hobbyist "
+         "with a ton of hobbies, and i'm also addicted to typing.")
+BIRTHDAY = "15 / 05"  # day / month
 
 FONT = "'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace"
 
@@ -480,17 +482,13 @@ def main():
         out["monkeytype"] = monkeytype(mt)
     if gh:
         out["activity"] = activity(gh)
-    if gh and mt:
-        text, right = ABOUT, "english"
-        run = best(mt, "words", "10")
-        if run:
-            text += f" currently hitting {int(run['wpm'])} wpm on the 10 word test."
-            right = f"english · words 10 · {int(run['wpm'])} wpm"
+    if gh:
+        text = ABOUT
         commit = latest_commit(gh)
         if commit:
             repo, message = commit
             text += f" right now i'm working on {repo}: {truncate(message.lower().rstrip('.'), 60)}."
-        out["typing"] = typing(text, right)
+        out["typing"] = typing(text, f"birthday · {BIRTHDAY}")
 
     for name, content in out.items():
         (HERE / f"{name}.svg").write_text(content)
