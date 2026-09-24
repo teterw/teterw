@@ -21,7 +21,6 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "teterw/teterw")
 LINES = [(0, 1, 2), (3, 4, 5), (6, 7, 8),
          (0, 3, 6), (1, 4, 7), (2, 5, 8),
          (0, 4, 8), (2, 4, 6)]
-EMOJI = {"X": "❌", "O": "⭕"}
 START, END = "<!-- GAME:START -->", "<!-- GAME:END -->"
 
 
@@ -60,17 +59,18 @@ def bot_move(board):
 
 def cell(board, i):
     if board[i] != " ":
-        return EMOJI[board[i]]
+        return f'<img src="game/img/{board[i].lower()}.svg" width="80" alt="{board[i]}">'
     title = quote(f"ttt|move|{i}")
     body = quote("Just press **Create** and wait ~30 seconds, the bot will answer here")
-    return f'<a href="https://github.com/{REPO}/issues/new?title={title}&body={body}">⬜</a>'
+    return (f'<a href="https://github.com/{REPO}/issues/new?title={title}&body={body}">'
+            f'<img src="game/img/empty.svg" width="80" alt="play square {i}"></a>')
 
 
 def render(state):
     board = state["board"]
     rows = []
     for r in range(3):
-        cells = "".join(f'<td align="center" width="64" height="64"><h2>{cell(board, r * 3 + c)}</h2></td>'
+        cells = "".join(f'<td>{cell(board, r * 3 + c)}</td>'
                         for c in range(3))
         rows.append(f"  <tr>{cells}</tr>")
     stats = state["stats"]
@@ -79,7 +79,7 @@ def render(state):
                             for n, (u, w) in enumerate(top, 1)) or "| - | nobody yet, be the first! | 0 |"
     last = state.get("last_result") or "No finished games yet."
     return f"""{START}
-<p align="center"><b>You are ❌, my bot is ⭕. Click an empty square to make your move!</b></p>
+<p align="center"><b>You play X (pink), my bot plays O (blue). Click an empty square to make your move.</b></p>
 <table align="center">
 {chr(10).join(rows)}
 </table>
