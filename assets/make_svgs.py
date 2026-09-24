@@ -48,10 +48,10 @@ def header():
     height = 150
     body = keyboard_icon(PAD_X, 32)
     body += [
-        f'<text x="{PAD_X + 66}" y="38" font-size="11" fill="{SUB}">student see</text>',
+        f'<text x="{PAD_X + 66}" y="38" font-size="11" fill="{SUB}">you see</text>',
         f'<text x="{PAD_X + 64}" y="66" font-size="34" fill="{TEXT_COLOR}">teterw</text>',
         f'<text x="{WIDTH - PAD_X}" y="58" font-size="15" fill="{SUB}" text-anchor="end">'
-        f'act · thailand · always building</text>',
+        f'act · thailand · will continue building</text>',
     ]
 
     # Config bar, e.g. "@ punctuation  # numbers | time words quote | 15 30 60"
