@@ -36,7 +36,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md game/state.json
-          git diff --cached --quiet || git commit -m "🎮 ${{ github.event.issue.user.login }} made a move"
+          git diff --cached --quiet || git commit -m "${{ github.event.issue.user.login }} made a move"
           git push
 
       - name: Reply and close the issue

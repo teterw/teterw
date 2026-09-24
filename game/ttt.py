@@ -62,7 +62,7 @@ def cell(board, i):
     if board[i] != " ":
         return EMOJI[board[i]]
     title = quote(f"ttt|move|{i}")
-    body = quote("Just press **Create** and wait ~30 seconds, the bot will answer here 🎮")
+    body = quote("Just press **Create** and wait ~30 seconds, the bot will answer here")
     return f'<a href="https://github.com/{REPO}/issues/new?title={title}&body={body}">⬜</a>'
 
 
@@ -84,12 +84,12 @@ def render(state):
 {chr(10).join(rows)}
 </table>
 <p align="center">
-  🏆 Visitor wins: <b>{stats['wins']}</b> &nbsp;·&nbsp; 🤖 Bot wins: <b>{stats['losses']}</b> &nbsp;·&nbsp; 🤝 Draws: <b>{stats['draws']}</b><br>
+  Visitor wins: <b>{stats['wins']}</b> &nbsp;·&nbsp; Bot wins: <b>{stats['losses']}</b> &nbsp;·&nbsp; Draws: <b>{stats['draws']}</b><br>
   <sub>Last game: {last}</sub>
 </p>
 
 <details>
-<summary>🥇 Leaderboard & how it works</summary>
+<summary>Leaderboard & how it works</summary>
 
 | # | Player | Wins |
 |:-:|:------:|:----:|
@@ -121,11 +121,11 @@ def play(title, user):
 
     m = re.fullmatch(r"ttt\|move\|([0-8])", title.strip())
     if not m:
-        output("🤔 That doesn't look like a valid move. Click an empty square in the README to play!")
+        output("That doesn't look like a valid move. Click an empty square in the README to play!")
         return
     move = int(m.group(1))
     if board[move] != " ":
-        output(f"😅 Square {move} is already taken (someone probably moved at the same time). "
+        output(f"Square {move} is already taken (someone probably moved at the same time). "
                "Check the README for the current board and try another square!")
         return
 
@@ -148,16 +148,16 @@ def play(title, user):
         if result == "X":
             state["stats"]["wins"] += 1
             state["players"][user] = state["players"].get(user, 0) + 1
-            state["last_result"] = f"❌ won! Winning move by @{user} 🎉"
-            msg += "\n\n🎉 **You WON!** You're on the leaderboard now. A new game has started."
+            state["last_result"] = f"X won, winning move by @{user}"
+            msg += "\n\n**You won!** You're on the leaderboard now. A new game has started."
         elif result == "O":
             state["stats"]["losses"] += 1
-            state["last_result"] = f"⭕ the bot won against {who} 🤖"
-            msg += "\n\n🤖 **The bot won this one.** A new game has started, try again!"
+            state["last_result"] = f"the bot won against {who}"
+            msg += "\n\n**The bot won this one.** A new game has started, try again!"
         else:
             state["stats"]["draws"] += 1
-            state["last_result"] = f"🤝 draw, played by {who}"
-            msg += "\n\n🤝 **It's a draw!** A new game has started."
+            state["last_result"] = f"draw, played by {who}"
+            msg += "\n\n**It's a draw!** A new game has started."
         state["board"] = [" "] * 9
         state["moves"] = []
     else:
@@ -165,7 +165,7 @@ def play(title, user):
 
     STATE_FILE.write_text(json.dumps(state, indent=2) + "\n")
     write_readme(state)
-    output(msg + f"\n\n👉 [Back to the board](https://github.com/{REPO.split('/')[0]})")
+    output(msg + f"\n\n[Back to the board](https://github.com/{REPO.split('/')[0]})")
 
 
 if __name__ == "__main__":
