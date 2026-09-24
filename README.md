@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/header.svg" width="100%" alt="teterw" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/header.svg?v=4ddcbd94" width="100%" alt="teterw" />
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=b1fbfc47" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. live personal bests below." /></a>
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg" width="100%" alt="monkeytype personal bests" /></a>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=2efbc894" width="100%" alt="monkeytype personal bests" /></a>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/nowplaying.svg" width="100%" alt="now playing" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/nowplaying.svg?v=88cd7f95" width="100%" alt="now playing" />
 </p>
 
 <p align="center">
@@ -63,9 +63,9 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=6abcd04f" width="100%" alt="github activity" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/teterw?tab=repositories"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/footer.svg" width="100%" alt="tab + enter - view my repositories" /></a>
+  <a href="https://github.com/teterw?tab=repositories"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/footer.svg?v=892a7190" width="100%" alt="tab + enter - view my repositories" /></a>
 </p>

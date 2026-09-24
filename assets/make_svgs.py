@@ -15,9 +15,11 @@ Everything animates with SMIL, so it works inside GitHub's README <img> without 
 """
 
 import base64
+import hashlib
 import json
 import os
 import random
+import re
 import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
@@ -359,37 +361,24 @@ def streaks(days):
     return current, longest
 
 
-RIPPLE_LOOP, RIPPLE_RADIUS, RIPPLE_SPEED, RIPPLE_FADE = 10.0, 5, 0.07, 0.7
+TAP_START, TAP_SPAN, TAP_SETTLE, TAP_HOLD = 0.4, 6.0, 0.4, 3.5
 
 
-def ripple_origins(weeks):
-    """Busiest days are the "key presses": each one flashes and ripples outward, in turn."""
-    cells = [(d["contributionCount"], wi, date.fromisoformat(d["date"]).isoweekday() % 7)
-             for wi, w in enumerate(weeks) for d in w["contributionDays"] if d["contributionCount"]]
-    top = sorted(cells, reverse=True)[:6]
-    random.Random(sum(c for c, *_ in cells)).shuffle(top)  # stable for the same data
-    return [(wi, row, 0.5 + k * 1.5) for k, (_, wi, row) in enumerate(top)]
+def tap_times(weeks):
+    """When each active day "gets tapped": in date order, spread over TAP_SPAN seconds."""
+    active = [(wi, date.fromisoformat(d["date"]).isoweekday() % 7)
+              for wi, w in enumerate(weeks) for d in w["contributionDays"] if d["contributionCount"]]
+    gap = TAP_SPAN / max(len(active), 1)
+    return {cell: TAP_START + i * gap for i, cell in enumerate(active)}
 
 
-def reactive(wi, row, base, ripples):
-    """SMIL fill animation for one heatmap cell, like reactive keyboard lighting."""
-    events = []
-    for ow, orow, t0 in ripples:
-        dist = ((wi - ow) ** 2 + (row - orow) ** 2) ** 0.5
-        if dist <= RIPPLE_RADIUS:
-            events.append((t0 + dist * RIPPLE_SPEED, 1 - dist / (RIPPLE_RADIUS + 1)))
-    frames, last_end = [(0.0, base)], 0.0
-    for t, strength in sorted(events):
-        if t - 0.03 <= last_end:  # still fading from a previous wave
-            continue
-        frames += [(t - 0.03, base), (t, mix(base, FLASH, 0.55 + 0.45 * strength)), (t + RIPPLE_FADE, base)]
-        last_end = t + RIPPLE_FADE
-    if len(frames) == 1:
-        return ""
-    frames.append((RIPPLE_LOOP, base))
+def tap(base, t, loop):
+    """Cell starts empty, flashes like a tapped key at t, settles to its shade, clears at the end."""
+    frames = [(0, BG_DARK), (t, BG_DARK), (t + 0.05, FLASH), (t + TAP_SETTLE, base),
+              (loop - 0.4, base), (loop, BG_DARK)]
     return (f'<animate attributeName="fill" values="{";".join(c for _, c in frames)}" '
-            f'keyTimes="{";".join(f"{t / RIPPLE_LOOP:.4f}" for t, _ in frames)}" '
-            f'dur="{RIPPLE_LOOP}s" repeatCount="indefinite"/>')
+            f'keyTimes="{";".join(f"{f / loop:.4f}" for f, _ in frames)}" '
+            f'dur="{loop}s" repeatCount="indefinite"/>')
 
 
 def activity(gh):
@@ -403,7 +392,8 @@ def activity(gh):
               "FOURTH_QUARTILE": MAIN}
     step = (WIDTH - 2 * PAD_X + 3) / len(weeks)
     cell, gx, gy = step - 3, PAD_X, 86
-    ripples = ripple_origins(weeks)
+    taps = tap_times(weeks)
+    loop = TAP_START + TAP_SPAN + TAP_SETTLE + TAP_HOLD
     last_month = None
     for wi, week in enumerate(weeks):
         x = gx + wi * step
@@ -416,7 +406,7 @@ def activity(gh):
             y = gy + row * step
             base = shades.get(d["contributionLevel"], BG_DARK)
             body.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cell:.1f}" height="{cell:.1f}" rx="2" '
-                        f'fill="{base}">{reactive(wi, row, base, ripples)}</rect>')
+                        f'fill="{base}">{tap(base, taps[wi, row], loop) if (wi, row) in taps else ""}</rect>')
 
     current, longest = streaks(days)
     repos = gh["repositories"]
@@ -504,6 +494,20 @@ def main():
     for name, content in out.items():
         (HERE / f"{name}.svg").write_text(content)
         print(f"wrote assets/{name}.svg")
+    bust_cache()
+
+
+def bust_cache():
+    """GitHub caches README images by URL, so add ?v=<content hash> to force a refresh on change."""
+    readme = HERE.parent / "README.md"
+
+    def versioned(m):
+        svg_file = HERE / f"{m.group(1)}.svg"
+        if not svg_file.exists():
+            return m.group(0)
+        return f"assets/{m.group(1)}.svg?v={hashlib.sha1(svg_file.read_bytes()).hexdigest()[:8]}"
+
+    readme.write_text(re.sub(r"assets/(\w+)\.svg(?:\?v=\w+)?", versioned, readme.read_text()))
 
 
 if __name__ == "__main__":
