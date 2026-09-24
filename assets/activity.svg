@@ -393,10 +393,10 @@
 <text x="595.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">7d</text>
 <text x="40.0" y="276.1" font-size="12" fill="#646669" text-anchor="start">top languages</text>
 <clipPath id="bar"><rect x="40" y="288.1320754716981" width="740" height="10" rx="5"/></clipPath>
-<rect x="40.0" y="288.1320754716981" width="559.8" height="10" fill="#e2b714" clip-path="url(#bar)"/>
+<rect x="40.0" y="288.1320754716981" width="559.2" height="10" fill="#e2b714" clip-path="url(#bar)"/>
 <rect x="40.0" y="312.1320754716981" width="9" height="9" rx="2" fill="#e2b714"/>
-<text x="54.0" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">typescript 76%</text>
-<rect x="599.3" y="288.1320754716981" width="101.4" height="10" fill="#d1d0c5" clip-path="url(#bar)"/>
+<text x="54.0" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">typescript 75%</text>
+<rect x="598.7" y="288.1320754716981" width="102.1" height="10" fill="#d1d0c5" clip-path="url(#bar)"/>
 <rect x="180.2" y="312.1320754716981" width="9" height="9" rx="2" fill="#d1d0c5"/>
 <text x="194.2" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">python 14%</text>
 <rect x="700.2" y="288.1320754716981" width="41.3" height="10" fill="#b39212" clip-path="url(#bar)"/>
