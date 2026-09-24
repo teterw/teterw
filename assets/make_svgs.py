@@ -36,6 +36,10 @@ FONT = "'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace"
 
 WIDTH, PAD_X = 820, 40
 HERE = Path(__file__).parent
+BANGKOK = timezone(timedelta(hours=7))
+TODAY = datetime.now(BANGKOK).date()
+NEW_PB_DAYS = 3  # how long the "new pb" tag stays up
+TRACKED = (("words", "10"), ("time", "15"), ("time", "60"))  # lines on the progress chart
 
 
 def svg(height, body):
@@ -244,9 +248,26 @@ def typing(text, right):
     return svg(height, body)
 
 
+def pb_date(run):
+    return datetime.fromtimestamp(run["timestamp"] / 1000, BANGKOK).date()
+
+
+def is_new_pb(run):
+    return run is not None and (TODAY - pb_date(run)).days < NEW_PB_DAYS
+
+
 def monkeytype(mt):
-    since = datetime.fromtimestamp(mt["addedAt"] / 1000, timezone.utc).strftime("%b %Y").lower()
-    body = card_title("monkeytype", f"{mt['name']} · joined {since}")
+    modes = (("time", ("15", "30", "60", "120")), ("words", ("10", "25", "50", "100")))
+    fresh = [(pb_date(run), mode, length) for mode, lengths in modes for length in lengths
+             if is_new_pb(run := best(mt, mode, length))]
+    if fresh:
+        when, mode, length = max(fresh)
+        body = [label(PAD_X, 44, "monkeytype", 20, MAIN, weight=700),
+                label(WIDTH - PAD_X, 44, f"new pb! {mode} {length} · {when.strftime('%b %-d').lower()}",
+                      15, MAIN, "end")]
+    else:
+        since = datetime.fromtimestamp(mt["addedAt"] / 1000, timezone.utc).strftime("%b %Y").lower()
+        body = card_title("monkeytype", f"{mt['name']} · joined {since}")
 
     stats = mt["typingStats"]
     minutes = int(stats["timeTyping"] // 60)
@@ -261,11 +282,10 @@ def monkeytype(mt):
         x = PAD_X + i * col_w
         body += [label(x, 82, name, 12), label(x, 110, value, 20, TEXT_COLOR)]
 
-    panel_w, top = (WIDTH - 2 * PAD_X - 20) / 2, 132
-    for p, (mode, lengths) in enumerate((("time", ("15", "30", "60", "120")),
-                                         ("words", ("10", "25", "50", "100")))):
+    panel_w, top, panel_h = (WIDTH - 2 * PAD_X - 20) / 2, 132, 140
+    for p, (mode, lengths) in enumerate(modes):
         px = PAD_X + p * (panel_w + 20)
-        body.append(f'<rect x="{px:.1f}" y="{top}" width="{panel_w:.1f}" height="118" rx="10" fill="{BG_DARK}"/>')
+        body.append(f'<rect x="{px:.1f}" y="{top}" width="{panel_w:.1f}" height="{panel_h}" rx="10" fill="{BG_DARK}"/>')
         body.append(label(px + 18, top + 24, mode, 13, MAIN))
         cw = (panel_w - 36) / 4
         for i, length in enumerate(lengths):
@@ -274,7 +294,80 @@ def monkeytype(mt):
             body.append(label(x, top + 48, f"{length}{'s' if mode == 'time' else ''}", 12, SUB, "middle"))
             body.append(label(x, top + 84, int(run["wpm"]) if run else "-", 30, MAIN, "middle"))
             body.append(label(x, top + 104, f"{run['acc']:.0f}% acc" if run else "", 11, SUB, "middle"))
-    return svg(top + 118 + 28, body)
+            if is_new_pb(run):
+                # Pulsing "new pb" pill, like Monkeytype's crown on a fresh personal best.
+                body.append(f'<g><rect x="{x - 26:.1f}" y="{top + 113}" width="52" height="17" rx="8.5" fill="{MAIN}"/>'
+                            f'{label(x, top + 125.5, "new pb", 11, BG, "middle", 700)}'
+                            f'<animate attributeName="opacity" values="1;0.55;1" dur="1.6s" repeatCount="indefinite"/></g>')
+    return svg(top + panel_h + 28, body)
+
+
+def update_history(mt):
+    """Record each tracked personal best the first time we see it (dated when it was set)."""
+    path = HERE / "history.json"
+    history = json.loads(path.read_text()) if path.exists() else {}
+    for mode, length in TRACKED:
+        run = best(mt, mode, length)
+        if not run:
+            continue
+        points = history.setdefault(f"{mode} {length}", [])
+        wpm = round(run["wpm"], 2)
+        if not points or wpm > points[-1][1]:
+            points.append([pb_date(run).isoformat(), wpm])
+    path.write_text(json.dumps(history, indent=2) + "\n")
+    return history
+
+
+def progress(history):
+    series = [(f"{m} {l}", color) for (m, l), color in zip(TRACKED, (MAIN, TEXT_COLOR, SUB))
+              if history.get(f"{m} {l}")]
+    body = card_title("pb progress", "english · personal bests")
+    height = 320
+    left, right_x, top, bottom = PAD_X + 44, WIDTH - PAD_X, 74, height - 68
+
+    dates = [date.fromisoformat(d) for name, _ in series for d, _ in history[name]]
+    start, end = min(dates), TODAY
+    if (end - start).days < 30:
+        start = end - timedelta(days=30)
+    values = [v for name, _ in series for _, v in history[name]]
+    lo, hi = int(min(values) // 20 * 20) - 20, int(-(-(max(values) + 8) // 20) * 20)
+    span_days = max((end - start).days, 1)
+    X = lambda d: left + (d - start).days / span_days * (right_x - left)
+    Y = lambda v: bottom - (v - lo) / (hi - lo) * (bottom - top)
+
+    # Grid + y labels
+    for v in range(lo, hi + 1, 20):
+        body.append(f'<line x1="{left}" x2="{right_x}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" stroke="{BG_DARK}" stroke-width="2"/>')
+        body.append(label(left - 12, Y(v) + 4, v, 11, SUB, "end"))
+    # Month ticks
+    d = date(start.year, start.month, 1)
+    while d <= end:
+        if d >= start and X(d) < right_x - 20:
+            body.append(label(X(d), bottom + 20, d.strftime("%b").lower(), 11, SUB, "middle"))
+        d = date(d.year + d.month // 12, d.month % 12 + 1, 1)
+
+    # Step lines: a PB holds until it is beaten.
+    for name, color in series:
+        pts = [(date.fromisoformat(dd), v) for dd, v in history[name]]
+        path = f"M{X(pts[0][0]):.1f},{Y(pts[0][1]):.1f}"
+        for d2, v2 in pts[1:]:
+            path += f" H{X(d2):.1f} V{Y(v2):.1f}"
+        path += f" H{X(end):.1f}"
+        body.append(f'<path d="{path}" fill="none" stroke="{color}" stroke-width="3" stroke-linejoin="round"/>')
+        for d1, v in pts:
+            body.append(f'<circle cx="{X(d1):.1f}" cy="{Y(v):.1f}" r="4.5" fill="{color}" stroke="{BG}" stroke-width="2"/>')
+        body.append(label(X(end) - 4, Y(pts[-1][1]) - 10, int(pts[-1][1]), 13, color, "end", 700))
+
+    # Legend
+    lx = PAD_X
+    for name, color in series:
+        text = f"{name.split()[1]}s" if name.startswith("time") else name
+        body.append(f'<rect x="{lx}" y="{height - 21}" width="14" height="4" rx="2" fill="{color}"/>')
+        body.append(label(lx + 20, height - 15, text, 12, TEXT_COLOR))
+        lx += 20 + len(text) * 12 * 0.62 + 24
+    body.append(label(WIDTH - PAD_X, height - 15, f"since {start.strftime('%b %-d').lower()}"
+                      if (TODAY - min(dates)).days >= 30 else "", 11, SUB, "end"))
+    return svg(height, body)
 
 
 def equalizer(x, y, animated):
@@ -418,6 +511,7 @@ def main():
         out["nowplaying"] = nowplaying(track)
     if mt:
         out["monkeytype"] = monkeytype(mt)
+        out["progress"] = progress(update_history(mt))
     if gh:
         out["activity"] = activity(gh)
     if gh and mt:

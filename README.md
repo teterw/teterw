@@ -11,6 +11,10 @@
 </p>
 
 <p align="center">
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/progress.svg" width="100%" alt="personal best progress" />
+</p>
+
+<p align="center">
   <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/nowplaying.svg" width="100%" alt="now playing" />
 </p>
 
