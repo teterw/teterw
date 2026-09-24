@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 92" width="820" height="92" font-family="'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace">
+<rect width="820" height="92" rx="14" fill="#323437"/>
+<rect x="265.4" y="25" width="35.4" height="21" rx="4" fill="#646669"/>
+<text x="271.4" y="40" font-size="13" fill="#323437">tab</text>
+<text x="300.8" y="40" font-size="13" fill="#646669" xml:space="preserve"> + </text>
+<rect x="324.2" y="25" width="51.0" height="21" rx="4" fill="#646669"/>
+<text x="330.2" y="40" font-size="13" fill="#323437">enter</text>
+<text x="375.2" y="40" font-size="13" fill="#646669" xml:space="preserve"> - view my repositories</text>
+<rect x="237.8" y="55" width="35.4" height="21" rx="4" fill="#646669"/>
+<text x="243.8" y="70" font-size="13" fill="#323437">esc</text>
+<text x="273.2" y="70" font-size="13" fill="#646669" xml:space="preserve"> or </text>
+<rect x="304.4" y="55" width="43.2" height="21" rx="4" fill="#646669"/>
+<text x="310.4" y="70" font-size="13" fill="#323437">ctrl</text>
+<text x="347.6" y="70" font-size="13" fill="#646669" xml:space="preserve"> + </text>
+<rect x="371.0" y="55" width="51.0" height="21" rx="4" fill="#646669"/>
+<text x="377.0" y="70" font-size="13" fill="#323437">shift</text>
+<text x="422.0" y="70" font-size="13" fill="#646669" xml:space="preserve"> + </text>
+<rect x="445.4" y="55" width="19.8" height="21" rx="4" fill="#646669"/>
+<text x="451.4" y="70" font-size="13" fill="#323437">p</text>
+<text x="465.2" y="70" font-size="13" fill="#646669" xml:space="preserve"> - command line</text>
+</svg>

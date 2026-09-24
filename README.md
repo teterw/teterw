@@ -1,104 +1,71 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff6ec7,50:a66cff,100:4fc3f7&height=200&section=header&text=Hey%20there,%20I'm%20teterw!&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=student%20%E2%80%A2%20builder%20%E2%80%A2%20music%20enjoyer&descAlignY=58&descSize=18" width="100%"/>
-
 <p align="center">
-  <a href="https://github.com/teterw">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=900&color=A66CFF&center=true&vCenter=true&width=520&lines=Student+at+ACT;Building+a+LOT+of+projects;Python+%E2%80%A2+Next.js+%E2%80%A2+Automation;Speedrunning+Monkeytype;Vibing+to+Malcolm+Todd;Scroll+down+and+play+me!" alt="Typing SVG" />
-  </a>
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/header.svg" width="100%" alt="teterw" />
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=teterw&label=Profile%20visitors&color=a66cff&style=flat" alt="profile views" />
-  <img src="https://img.shields.io/badge/Based%20in-Thailand-ff6ec7?style=flat" alt="Thailand" />
-  <img src="https://img.shields.io/badge/Status-Building%20stuff-4fc3f7?style=flat" alt="status" />
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. currently hitting 193 wpm on the 10 word test." /></a>
 </p>
-
-## About me
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/typing/typing.svg" width="100%" alt="Monkeytype-style typing animation" /></a>
+  <img src="https://img.shields.io/badge/193_wpm-words_10-e2b714?style=flat-square&labelColor=323437" alt="193 wpm" />
+  <img src="https://img.shields.io/badge/based_in-thailand-e2b714?style=flat-square&labelColor=323437" alt="thailand" />
+  <img src="https://komarev.com/ghpvc/?username=teterw&label=profile%20views&color=e2b714&style=flat-square" alt="profile views" />
 </p>
 
-## Things I've built
+### `projects`
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/teterw/derive">Derive · ทีละขั้น</a></h3>
-      Bilingual (ไทย / English) maths practice site, from Thai secondary school maths up to Calculus II. Step-by-step derivations, streaks, and progress stats, like <b>Monkeytype + LeetCode</b> but for maths.
+      <b><a href="https://github.com/teterw/derive">derive · ทีละขั้น</a></b><br>
+      <sub>Bilingual (ไทย / English) maths practice site, from Thai secondary school maths up to Calculus II. Step-by-step derivations, streaks, and progress stats: Monkeytype + LeetCode, but for maths.</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=white" />
-      <img src="https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white" />
-      <img src="https://img.shields.io/badge/Postgres-4169e1?logo=postgresql&logoColor=white" />
-      <br><a href="https://scan-cleaner-cn1w.vercel.app">Live site</a>
+      <img src="https://img.shields.io/badge/next.js-323437?style=flat-square&logo=nextdotjs&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/typescript-323437?style=flat-square&logo=typescript&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/postgres-323437?style=flat-square&logo=postgresql&logoColor=e2b714" />
+      <a href="https://scan-cleaner-cn1w.vercel.app"><img src="https://img.shields.io/badge/live_site-e2b714?style=flat-square&logo=vercel&logoColor=323437" /></a>
     </td>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/teterw/fedoralink">FedoraLink</a></h3>
-      Connect your Android phone to Fedora over <b>Bluetooth</b>. Notifications, clipboard, and battery right in GNOME Quick Settings, with no Wi-Fi network needed.
+      <b><a href="https://github.com/teterw/fedoralink">fedoralink</a></b><br>
+      <sub>Connect your Android phone to Fedora over Bluetooth. Notifications, clipboard, and battery in GNOME Quick Settings, with no Wi-Fi network needed.</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/Python-3776ab?logo=python&logoColor=white" />
-      <img src="https://img.shields.io/badge/Kotlin-7f52ff?logo=kotlin&logoColor=white" />
-      <img src="https://img.shields.io/badge/GNOME-4a86cf?logo=gnome&logoColor=white" />
+      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/kotlin-323437?style=flat-square&logo=kotlin&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/gnome-323437?style=flat-square&logo=gnome&logoColor=e2b714" />
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/teterw/catsole">Catsole</a></h3>
-      USB-tethered <b>Arduino desk display</b>: synced song lyrics or live PC stats on an OLED screen, switched with an <b>NFC tap</b>.
+      <b><a href="https://github.com/teterw/catsole">catsole</a></b><br>
+      <sub>USB-tethered Arduino desk display: synced song lyrics or live PC stats on an OLED screen, switched with an NFC tap.</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/Python-3776ab?logo=python&logoColor=white" />
-      <img src="https://img.shields.io/badge/C++-00599c?logo=cplusplus&logoColor=white" />
-      <img src="https://img.shields.io/badge/Arduino-00878f?logo=arduino&logoColor=white" />
+      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/c++-323437?style=flat-square&logo=cplusplus&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/arduino-323437?style=flat-square&logo=arduino&logoColor=e2b714" />
     </td>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/teterw/pdf-maker-android">PDF Maker</a></h3>
-      Offline Android app that turns images and PDFs into a single PDF. Bulk selection, sorting by name/date/size, and merging that keeps text sharp.
+      <b><a href="https://github.com/teterw/pdf-maker-android">pdf-maker-android</a></b><br>
+      <sub>Offline Android app that turns images and PDFs into a single PDF. Bulk selection, sorting by name/date/size, and merging that keeps text sharp.</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/Kotlin-7f52ff?logo=kotlin&logoColor=white" />
-      <img src="https://img.shields.io/badge/Android-34a853?logo=android&logoColor=white" />
+      <img src="https://img.shields.io/badge/kotlin-323437?style=flat-square&logo=kotlin&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/android-323437?style=flat-square&logo=android&logoColor=e2b714" />
     </td>
   </tr>
 </table>
 
-## Tech I use
+### `stack`
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,js,ts,html,css,nextjs,react,tailwind,kotlin,androidstudio,arduino,cpp,postgres,vercel,linux,git&perline=8" />
+  <img src="https://skillicons.dev/icons?i=python,js,ts,html,css,nextjs,react,tailwind,kotlin,androidstudio,arduino,cpp,postgres,vercel,linux,git&perline=8&theme=dark" />
 </p>
 
-## Stats
+### `stats`
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=teterw&show_icons=true&theme=radical&hide_border=true&count_private=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=teterw&layout=compact&theme=radical&hide_border=true&langs_count=8" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=teterw&show_icons=true&count_private=true&hide_border=true&bg_color=323437&title_color=e2b714&text_color=d1d0c5&icon_color=e2b714&ring_color=e2b714" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=teterw&layout=compact&langs_count=8&hide_border=true&bg_color=323437&title_color=e2b714&text_color=d1d0c5" />
 </p>
+
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=teterw&theme=radical&hide_border=true" />
+  <a href="https://github.com/teterw?tab=repositories"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/footer.svg" width="100%" alt="tab + enter - view my repositories" /></a>
 </p>
-
-## Play Tic-Tac-Toe with me
-
-<!-- GAME:START -->
-<p align="center"><b>You play X (pink), my bot plays O (blue). Click an empty square to make your move.</b></p>
-<table align="center">
-  <tr><td><a href="https://github.com/teterw/teterw/issues/new?title=ttt%7Cmove%7C0&body=Just%20press%20%2A%2ACreate%2A%2A%20and%20wait%20~30%20seconds%2C%20the%20bot%20will%20answer%20here"><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/empty.svg" width="80" alt="play square 0"></a></td><td><a href="https://github.com/teterw/teterw/issues/new?title=ttt%7Cmove%7C1&body=Just%20press%20%2A%2ACreate%2A%2A%20and%20wait%20~30%20seconds%2C%20the%20bot%20will%20answer%20here"><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/empty.svg" width="80" alt="play square 1"></a></td><td><a href="https://github.com/teterw/teterw/issues/new?title=ttt%7Cmove%7C2&body=Just%20press%20%2A%2ACreate%2A%2A%20and%20wait%20~30%20seconds%2C%20the%20bot%20will%20answer%20here"><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/empty.svg" width="80" alt="play square 2"></a></td></tr>
-  <tr><td><a href="https://github.com/teterw/teterw/issues/new?title=ttt%7Cmove%7C3&body=Just%20press%20%2A%2ACreate%2A%2A%20and%20wait%20~30%20seconds%2C%20the%20bot%20will%20answer%20here"><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/empty.svg" width="80" alt="play square 3"></a></td><td><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/o.svg" width="80" alt="O"></td><td><a href="https://github.com/teterw/teterw/issues/new?title=ttt%7Cmove%7C5&body=Just%20press%20%2A%2ACreate%2A%2A%20and%20wait%20~30%20seconds%2C%20the%20bot%20will%20answer%20here"><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/empty.svg" width="80" alt="play square 5"></a></td></tr>
-  <tr><td><a href="https://github.com/teterw/teterw/issues/new?title=ttt%7Cmove%7C6&body=Just%20press%20%2A%2ACreate%2A%2A%20and%20wait%20~30%20seconds%2C%20the%20bot%20will%20answer%20here"><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/empty.svg" width="80" alt="play square 6"></a></td><td><a href="https://github.com/teterw/teterw/issues/new?title=ttt%7Cmove%7C7&body=Just%20press%20%2A%2ACreate%2A%2A%20and%20wait%20~30%20seconds%2C%20the%20bot%20will%20answer%20here"><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/empty.svg" width="80" alt="play square 7"></a></td><td><img src="https://raw.githubusercontent.com/teterw/teterw/main/game/img/x.svg" width="80" alt="X"></td></tr>
-</table>
-<p align="center">
-  Visitor wins: <b>0</b> &nbsp;·&nbsp; Bot wins: <b>0</b> &nbsp;·&nbsp; Draws: <b>0</b><br>
-  <sub>Last game: No finished games yet.</sub>
-</p>
-
-<details>
-<summary>Leaderboard & how it works</summary>
-
-| # | Player | Wins |
-|:-:|:------:|:----:|
-| - | nobody yet, be the first! | 0 |
-
-Clicking a square opens an issue. A GitHub Action reads your move, the bot answers,
-and this README gets redrawn. Refresh the page after ~30 seconds to see the new board.
-</details>
-<!-- GAME:END -->
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4fc3f7,50:a66cff,100:ff6ec7&height=120&section=footer" width="100%"/>
