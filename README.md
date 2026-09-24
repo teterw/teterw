@@ -7,7 +7,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/193_wpm-words_10-e2b714?style=flat-square&labelColor=323437" alt="193 wpm" />
   <img src="https://img.shields.io/badge/based_in-thailand-e2b714?style=flat-square&labelColor=323437" alt="thailand" />
   <img src="https://komarev.com/ghpvc/?username=teterw&label=profile%20views&color=e2b714&style=flat-square" alt="profile views" />
 </p>
