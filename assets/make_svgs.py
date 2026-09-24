@@ -33,6 +33,7 @@ ABOUT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into 
          "tech and always learning something new by building projects. i'm a hobbyist "
          "with a ton of hobbies, and i'm also addicted to typing.")
 BIRTHDAY = "15 / 05"  # day / month
+FAVORITE_ARTISTS = ["malcolm todd", "macq", "arctic monkeys"]
 
 FONT = "'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace"
 
@@ -341,7 +342,7 @@ def nowplaying(track):
         status = "now playing" if track["now"] else "last played"
         title, artist = track["title"], track["artist"]
     else:
-        status, title, artist = "on repeat", "favorite artist", "malcolm todd"
+        status, title, artist = "on repeat", "favorite artists", " · ".join(FAVORITE_ARTISTS)
     body += [label(tx, 42, status, 12), label(tx, 72, truncate(title, 42), 22, TEXT_COLOR),
              label(tx, 98, truncate(artist, 50), 15, MAIN)]
     body += equalizer(WIDTH - PAD_X - 32, 76, animated=track is None or track["now"])
