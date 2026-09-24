@@ -373,12 +373,13 @@ def tap_times(weeks):
 
 
 def tap(base, t, loop):
-    """Cell starts empty, flashes like a tapped key at t, settles to its shade, clears at the end."""
+    """Cell taps in at t (flash, settle to its shade), holds, then taps out in the same order."""
+    out = t + TAP_SPAN + TAP_SETTLE + TAP_HOLD
     frames = [(0, BG_DARK), (t, BG_DARK), (t + 0.05, FLASH), (t + TAP_SETTLE, base),
-              (loop - 0.4, base), (loop, BG_DARK)]
+              (out, base), (out + 0.05, FLASH), (out + TAP_SETTLE, BG_DARK), (loop, BG_DARK)]
     return (f'<animate attributeName="fill" values="{";".join(c for _, c in frames)}" '
             f'keyTimes="{";".join(f"{f / loop:.4f}" for f, _ in frames)}" '
-            f'dur="{loop}s" repeatCount="indefinite"/>')
+            f'dur="{loop:.1f}s" repeatCount="indefinite"/>')
 
 
 def activity(gh):
@@ -393,7 +394,7 @@ def activity(gh):
     step = (WIDTH - 2 * PAD_X + 3) / len(weeks)
     cell, gx, gy = step - 3, PAD_X, 86
     taps = tap_times(weeks)
-    loop = TAP_START + TAP_SPAN + TAP_SETTLE + TAP_HOLD
+    loop = TAP_START + 2 * (TAP_SPAN + TAP_SETTLE) + TAP_HOLD + 0.6  # in, hold, out, short pause
     last_month = None
     for wi, week in enumerate(weeks):
         x = gx + wi * step

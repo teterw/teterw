@@ -63,7 +63,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=6abcd04f" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=44c7a158" width="100%" alt="github activity" />
 </p>
 
 <p align="center">
