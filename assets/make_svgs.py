@@ -30,14 +30,31 @@ MONKEYTYPE_USER = "teterw"
 ABOUT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into "
          "tech and always learning something new by building projects.")
 
-# Monkeytype "serika dark" theme
-BG, BG_DARK, SUB, MAIN, TEXT_COLOR = "#323437", "#2c2e31", "#646669", "#e2b714", "#d1d0c5"
 FONT = "'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace"
 
 WIDTH, PAD_X = 820, 40
 HERE = Path(__file__).parent
 BANGKOK = timezone(timedelta(hours=7))
-TODAY = datetime.now(BANGKOK).date()
+NOW = datetime.now(BANGKOK)
+TODAY = NOW.date()
+
+# Monkeytype themes: light "serika" by day, "serika dark" by night (Thailand time).
+# FLASH is the colour the reactive heatmap lights up to.
+THEMES = {
+    "serika":      dict(bg="#e1e1e3", sub_alt="#d1d3d8", sub="#aaaeb3", main="#e2b714",
+                        text="#323437", flash="#b88f00"),
+    "serika dark": dict(bg="#323437", sub_alt="#2c2e31", sub="#646669", main="#e2b714",
+                        text="#d1d0c5", flash="#ffd84a"),
+}
+THEME = os.environ.get("THEME") or ("serika" if 6 <= NOW.hour < 18 else "serika dark")
+_t = THEMES[THEME]
+BG, BG_DARK, SUB, MAIN, TEXT_COLOR, FLASH = (_t[k] for k in ("bg", "sub_alt", "sub", "main", "text", "flash"))
+
+
+def mix(a, b, f):
+    """Blend hex colour a toward b by fraction f."""
+    ca, cb = (tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)) for c in (a, b))
+    return "#" + "".join(f"{round(x + (y - x) * f):02x}" for x, y in zip(ca, cb))
 NEW_PB_DAYS = 3  # how long the "new pb" tag stays up
 
 
@@ -296,7 +313,7 @@ def monkeytype(mt):
             if is_new_pb(run):
                 # Pulsing "new pb" pill, like Monkeytype's crown on a fresh personal best.
                 body.append(f'<g><rect x="{x - 26:.1f}" y="{top + 113}" width="52" height="17" rx="8.5" fill="{MAIN}"/>'
-                            f'{label(x, top + 125.5, "new pb", 11, BG, "middle", 700)}'
+                            f'{label(x, top + 125.5, "new pb", 11, "#323437", "middle", 700)}'
                             f'<animate attributeName="opacity" values="1;0.55;1" dur="1.6s" repeatCount="indefinite"/></g>')
     return svg(top + panel_h + 28, body)
 
@@ -351,16 +368,51 @@ def streaks(days):
     return current, longest
 
 
+RIPPLE_LOOP, RIPPLE_RADIUS, RIPPLE_SPEED, RIPPLE_FADE = 10.0, 5, 0.07, 0.7
+
+
+def ripple_origins(weeks):
+    """Busiest days are the "key presses": each one flashes and ripples outward, in turn."""
+    cells = [(d["contributionCount"], wi, date.fromisoformat(d["date"]).isoweekday() % 7)
+             for wi, w in enumerate(weeks) for d in w["contributionDays"] if d["contributionCount"]]
+    top = sorted(cells, reverse=True)[:6]
+    random.Random(sum(c for c, *_ in cells)).shuffle(top)  # stable for the same data
+    return [(wi, row, 0.5 + k * 1.5) for k, (_, wi, row) in enumerate(top)]
+
+
+def reactive(wi, row, base, ripples):
+    """SMIL fill animation for one heatmap cell, like reactive keyboard lighting."""
+    events = []
+    for ow, orow, t0 in ripples:
+        dist = ((wi - ow) ** 2 + (row - orow) ** 2) ** 0.5
+        if dist <= RIPPLE_RADIUS:
+            events.append((t0 + dist * RIPPLE_SPEED, 1 - dist / (RIPPLE_RADIUS + 1)))
+    frames, last_end = [(0.0, base)], 0.0
+    for t, strength in sorted(events):
+        if t - 0.03 <= last_end:  # still fading from a previous wave
+            continue
+        frames += [(t - 0.03, base), (t, mix(base, FLASH, 0.55 + 0.45 * strength)), (t + RIPPLE_FADE, base)]
+        last_end = t + RIPPLE_FADE
+    if len(frames) == 1:
+        return ""
+    frames.append((RIPPLE_LOOP, base))
+    return (f'<animate attributeName="fill" values="{";".join(c for _, c in frames)}" '
+            f'keyTimes="{";".join(f"{t / RIPPLE_LOOP:.4f}" for t, _ in frames)}" '
+            f'dur="{RIPPLE_LOOP}s" repeatCount="indefinite"/>')
+
+
 def activity(gh):
     cal = gh["contributionsCollection"]["contributionCalendar"]
     weeks = cal["weeks"]
     days = [d for w in weeks for d in w["contributionDays"]]
     body = card_title("github activity", f"{cal['totalContributions']:,} contributions in the last year")
 
-    shades = {"NONE": BG_DARK, "FIRST_QUARTILE": "#5b4d1f", "SECOND_QUARTILE": "#866d19",
-              "THIRD_QUARTILE": "#b39212", "FOURTH_QUARTILE": MAIN}
+    shades = {"NONE": BG_DARK, "FIRST_QUARTILE": mix(BG_DARK, MAIN, 0.3),
+              "SECOND_QUARTILE": mix(BG_DARK, MAIN, 0.5), "THIRD_QUARTILE": mix(BG_DARK, MAIN, 0.75),
+              "FOURTH_QUARTILE": MAIN}
     step = (WIDTH - 2 * PAD_X + 3) / len(weeks)
     cell, gx, gy = step - 3, PAD_X, 86
+    ripples = ripple_origins(weeks)
     last_month = None
     for wi, week in enumerate(weeks):
         x = gx + wi * step
@@ -369,9 +421,11 @@ def activity(gh):
             body.append(label(x, gy - 8, first.strftime("%b").lower(), 11))
         last_month = first.month
         for d in week["contributionDays"]:
-            y = gy + date.fromisoformat(d["date"]).isoweekday() % 7 * step
+            row = date.fromisoformat(d["date"]).isoweekday() % 7
+            y = gy + row * step
+            base = shades.get(d["contributionLevel"], BG_DARK)
             body.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{cell:.1f}" height="{cell:.1f}" rx="2" '
-                        f'fill="{shades.get(d["contributionLevel"], BG_DARK)}"/>')
+                        f'fill="{base}">{reactive(wi, row, base, ripples)}</rect>')
 
     current, longest = streaks(days)
     repos = gh["repositories"]
@@ -390,7 +444,7 @@ def activity(gh):
             sizes[e["node"]["name"]] = sizes.get(e["node"]["name"], 0) + e["size"]
     top = sorted(sizes.items(), key=lambda kv: -kv[1])[:6]
     total = sum(s for _, s in top) or 1
-    colors = [MAIN, TEXT_COLOR, "#b39212", "#8d8c85", "#866d19", SUB]
+    colors = [MAIN, TEXT_COLOR, mix(BG, MAIN, 0.75), mix(BG, TEXT_COLOR, 0.55), mix(BG, MAIN, 0.5), SUB]
     ly = sy + 58
     body.append(label(PAD_X, ly, "top languages", 12))
     x, bar_w = PAD_X, WIDTH - 2 * PAD_X

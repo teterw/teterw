@@ -1,43 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820 300" width="820" height="300" font-family="'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace">
-<rect width="820" height="300" rx="14" fill="#323437"/>
+<rect width="820" height="300" rx="14" fill="#e1e1e3"/>
 <text x="40.0" y="44.0" font-size="20" fill="#e2b714" text-anchor="start" font-weight="700">monkeytype</text>
 <text x="780.0" y="44.0" font-size="15" fill="#e2b714" text-anchor="end">new pb! words 100 · sep 24</text>
-<text x="40.0" y="82.0" font-size="12" fill="#646669" text-anchor="start">tests completed</text>
-<text x="40.0" y="110.0" font-size="20" fill="#d1d0c5" text-anchor="start">8,262</text>
-<text x="225.0" y="82.0" font-size="12" fill="#646669" text-anchor="start">time typing</text>
-<text x="225.0" y="110.0" font-size="20" fill="#d1d0c5" text-anchor="start">55h 19m</text>
-<text x="410.0" y="82.0" font-size="12" fill="#646669" text-anchor="start">streak</text>
-<text x="410.0" y="110.0" font-size="20" fill="#d1d0c5" text-anchor="start">3d (best 63d)</text>
-<text x="595.0" y="82.0" font-size="12" fill="#646669" text-anchor="start">15s leaderboard</text>
-<text x="595.0" y="110.0" font-size="20" fill="#d1d0c5" text-anchor="start">top 4.9%</text>
-<rect x="40.0" y="132" width="360.0" height="140" rx="10" fill="#2c2e31"/>
+<text x="40.0" y="82.0" font-size="12" fill="#aaaeb3" text-anchor="start">tests completed</text>
+<text x="40.0" y="110.0" font-size="20" fill="#323437" text-anchor="start">8,262</text>
+<text x="225.0" y="82.0" font-size="12" fill="#aaaeb3" text-anchor="start">time typing</text>
+<text x="225.0" y="110.0" font-size="20" fill="#323437" text-anchor="start">55h 19m</text>
+<text x="410.0" y="82.0" font-size="12" fill="#aaaeb3" text-anchor="start">streak</text>
+<text x="410.0" y="110.0" font-size="20" fill="#323437" text-anchor="start">3d (best 63d)</text>
+<text x="595.0" y="82.0" font-size="12" fill="#aaaeb3" text-anchor="start">15s leaderboard</text>
+<text x="595.0" y="110.0" font-size="20" fill="#323437" text-anchor="start">top 4.9%</text>
+<rect x="40.0" y="132" width="360.0" height="140" rx="10" fill="#d1d3d8"/>
 <text x="58.0" y="156.0" font-size="13" fill="#e2b714" text-anchor="start">time</text>
-<text x="98.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">15s</text>
+<text x="98.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">15s</text>
 <text x="98.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">156</text>
-<text x="98.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">98% acc</text>
-<text x="179.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">30s</text>
+<text x="98.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">98% acc</text>
+<text x="179.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">30s</text>
 <text x="179.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">142</text>
-<text x="179.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">98% acc</text>
-<text x="260.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">60s</text>
+<text x="179.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">98% acc</text>
+<text x="260.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">60s</text>
 <text x="260.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">130</text>
-<text x="260.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">97% acc</text>
-<text x="341.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">120s</text>
+<text x="260.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">97% acc</text>
+<text x="341.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">120s</text>
 <text x="341.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">118</text>
-<text x="341.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">97% acc</text>
-<rect x="420.0" y="132" width="360.0" height="140" rx="10" fill="#2c2e31"/>
+<text x="341.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">97% acc</text>
+<rect x="420.0" y="132" width="360.0" height="140" rx="10" fill="#d1d3d8"/>
 <text x="438.0" y="156.0" font-size="13" fill="#e2b714" text-anchor="start">words</text>
-<text x="478.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">10</text>
+<text x="478.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">10</text>
 <text x="478.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">194</text>
-<text x="478.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">100% acc</text>
-<text x="559.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">25</text>
+<text x="478.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">100% acc</text>
+<text x="559.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">25</text>
 <text x="559.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">156</text>
-<text x="559.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">95% acc</text>
-<text x="640.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">50</text>
+<text x="559.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">95% acc</text>
+<text x="640.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">50</text>
 <text x="640.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">138</text>
-<text x="640.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">99% acc</text>
+<text x="640.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">99% acc</text>
 <g><rect x="614.5" y="245" width="52" height="17" rx="8.5" fill="#e2b714"/><text x="640.5" y="257.5" font-size="11" fill="#323437" text-anchor="middle" font-weight="700">new pb</text><animate attributeName="opacity" values="1;0.55;1" dur="1.6s" repeatCount="indefinite"/></g>
-<text x="721.5" y="180.0" font-size="12" fill="#646669" text-anchor="middle">100</text>
+<text x="721.5" y="180.0" font-size="12" fill="#aaaeb3" text-anchor="middle">100</text>
 <text x="721.5" y="216.0" font-size="30" fill="#e2b714" text-anchor="middle">118</text>
-<text x="721.5" y="236.0" font-size="11" fill="#646669" text-anchor="middle">98% acc</text>
+<text x="721.5" y="236.0" font-size="11" fill="#aaaeb3" text-anchor="middle">98% acc</text>
 <g><rect x="695.5" y="245" width="52" height="17" rx="8.5" fill="#e2b714"/><text x="721.5" y="257.5" font-size="11" fill="#323437" text-anchor="middle" font-weight="700">new pb</text><animate attributeName="opacity" values="1;0.55;1" dur="1.6s" repeatCount="indefinite"/></g>
 </svg>
