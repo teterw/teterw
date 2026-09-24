@@ -14,11 +14,9 @@
 
 ## About me
 
-- Student at **ACT**, based in **Thailand**
-- I build a lot of projects: **web apps**, **automation scripts**, and **fun side projects** that mix hardware and software
-- When I'm not coding I'm grinding typing tests on [**Monkeytype**](https://monkeytype.com/)
-- Always coding with **YouTube Music** on. Current favorite artist: [**Malcolm Todd**](https://music.youtube.com/search?q=malcolm+todd)
-- There's a **game at the bottom** of this page you can play right here
+<p align="center">
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/typing/typing.svg" width="100%" alt="Monkeytype-style typing animation" /></a>
+</p>
 
 ## Things I've built
 
@@ -102,11 +100,5 @@ Clicking a square opens an issue. A GitHub Action reads your move, the bot answe
 and this README gets redrawn. Refresh the page after ~30 seconds to see the new board.
 </details>
 <!-- GAME:END -->
-
-## Currently typing
-
-<p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/typing/typing.svg" width="100%" alt="Monkeytype-style typing animation" /></a>
-</p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4fc3f7,50:a66cff,100:ff6ec7&height=120&section=footer" width="100%"/>

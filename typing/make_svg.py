@@ -8,8 +8,9 @@ import random
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-TEXT = ("hi, i'm teterw. a student at act in thailand, building way too many "
-        "projects while malcolm todd plays on youtube music.")
+TEXT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into "
+        "tech and always learning something new by building projects. "
+        "think you type faster than me? come race me on monkeytype!")
 
 # Monkeytype "serika dark" theme
 BG, SUB, MAIN, CARET, TEXT_COLOR = "#323437", "#646669", "#e2b714", "#e2b714", "#d1d0c5"
@@ -36,7 +37,7 @@ def wrap(text):
 
 def main():
     lines = wrap(TEXT)
-    height = TOP + LINE_H * len(lines) + 40
+    height = TOP + LINE_H * len(lines) + 12
 
     # Position of every character, plus a human-ish keystroke timeline.
     chars, t = [], 0.8
@@ -77,8 +78,6 @@ def main():
         f'<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>'
         f'</rect>')
 
-    out.append(f'<text x="{WIDTH / 2}" y="{height - 16}" font-size="13" fill="{SUB}" '
-               f'text-anchor="middle">come race me on monkeytype.com</text>')
     out.append("</svg>")
 
     Path(__file__).with_name("typing.svg").write_text("\n".join(out) + "\n")
