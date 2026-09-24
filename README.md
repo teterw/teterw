@@ -3,7 +3,15 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. currently hitting 193 wpm on the 10 word test." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. live personal bests below." /></a>
+</p>
+
+<p align="center">
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg" width="100%" alt="monkeytype personal bests" /></a>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/nowplaying.svg" width="100%" alt="now playing" />
 </p>
 
 <p align="center">
@@ -52,17 +60,10 @@
   </tr>
 </table>
 
-### `stack`
+### `activity`
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,js,ts,html,css,nextjs,react,tailwind,kotlin,androidstudio,arduino,cpp,postgres,vercel,linux,git&perline=8&theme=dark" />
-</p>
-
-### `stats`
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=teterw&show_icons=true&count_private=true&hide_border=true&bg_color=323437&title_color=e2b714&text_color=d1d0c5&icon_color=e2b714&ring_color=e2b714" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=teterw&layout=compact&langs_count=8&hide_border=true&bg_color=323437&title_color=e2b714&text_color=d1d0c5" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg" width="100%" alt="github activity" />
 </p>
 
 <p align="center">
