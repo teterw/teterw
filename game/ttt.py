@@ -59,11 +59,11 @@ def bot_move(board):
 
 def cell(board, i):
     if board[i] != " ":
-        return f'<img src="game/img/{board[i].lower()}.svg" width="80" alt="{board[i]}">'
+        return f'<img src="https://raw.githubusercontent.com/{REPO}/main/game/img/{board[i].lower()}.svg" width="80" alt="{board[i]}">'
     title = quote(f"ttt|move|{i}")
     body = quote("Just press **Create** and wait ~30 seconds, the bot will answer here")
     return (f'<a href="https://github.com/{REPO}/issues/new?title={title}&body={body}">'
-            f'<img src="game/img/empty.svg" width="80" alt="play square {i}"></a>')
+            f'<img src="https://raw.githubusercontent.com/{REPO}/main/game/img/empty.svg" width="80" alt="play square {i}"></a>')
 
 
 def render(state):
