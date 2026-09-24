@@ -4,13 +4,18 @@
     " ",
     " ",
     " ",
+    "O",
     " ",
     " ",
     " ",
-    " ",
-    " "
+    "X"
   ],
-  "moves": [],
+  "moves": [
+    {
+      "by": "Skysosmart",
+      "cell": 8
+    }
+  ],
   "stats": {
     "wins": 0,
     "losses": 0,
