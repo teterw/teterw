@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820 124" width="820" height="124" font-family="'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace">
-<rect width="820" height="124" rx="14" fill="#e1e1e3"/>
+<rect width="820" height="124" rx="14" fill="#323437"/>
 <clipPath id="art"><rect x="40" y="24.0" width="76" height="76" rx="10"/></clipPath>
-<rect x="40" y="24.0" width="76" height="76" rx="10" fill="#d1d3d8"/>
+<rect x="40" y="24.0" width="76" height="76" rx="10" fill="#2c2e31"/>
 <rect x="62" y="50.0" width="5" height="26" rx="2" fill="#e2b714"></rect>
 <rect x="71" y="46.0" width="5" height="30" rx="2" fill="#e2b714"></rect>
 <rect x="80" y="54.0" width="5" height="22" rx="2" fill="#e2b714"></rect>
 <rect x="89" y="48.0" width="5" height="28" rx="2" fill="#e2b714"></rect>
-<text x="140.0" y="42.0" font-size="12" fill="#aaaeb3" text-anchor="start">on repeat</text>
-<text x="140.0" y="72.0" font-size="22" fill="#323437" text-anchor="start">favorite artist</text>
+<text x="140.0" y="42.0" font-size="12" fill="#646669" text-anchor="start">on repeat</text>
+<text x="140.0" y="72.0" font-size="22" fill="#d1d0c5" text-anchor="start">favorite artist</text>
 <text x="140.0" y="98.0" font-size="15" fill="#e2b714" text-anchor="start">malcolm todd</text>
 <rect x="748" y="70" width="5" height="6" rx="2" fill="#e2b714"><animate attributeName="height" values="6;26;6" dur="0.9s" repeatCount="indefinite"/><animate attributeName="y" values="70;50;70" dur="0.9s" repeatCount="indefinite"/></rect>
 <rect x="757" y="66" width="5" height="10" rx="2" fill="#e2b714"><animate attributeName="height" values="10;30;10" dur="0.7s" repeatCount="indefinite"/><animate attributeName="y" values="66;46;66" dur="0.7s" repeatCount="indefinite"/></rect>

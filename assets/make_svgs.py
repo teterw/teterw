@@ -35,20 +35,11 @@ FONT = "'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace"
 WIDTH, PAD_X = 820, 40
 HERE = Path(__file__).parent
 BANGKOK = timezone(timedelta(hours=7))
-NOW = datetime.now(BANGKOK)
-TODAY = NOW.date()
+TODAY = datetime.now(BANGKOK).date()
 
-# Monkeytype themes: light "serika" by day, "serika dark" by night (Thailand time).
-# FLASH is the colour the reactive heatmap lights up to.
-THEMES = {
-    "serika":      dict(bg="#e1e1e3", sub_alt="#d1d3d8", sub="#aaaeb3", main="#e2b714",
-                        text="#323437", flash="#b88f00"),
-    "serika dark": dict(bg="#323437", sub_alt="#2c2e31", sub="#646669", main="#e2b714",
-                        text="#d1d0c5", flash="#ffd84a"),
-}
-THEME = os.environ.get("THEME") or ("serika" if 6 <= NOW.hour < 18 else "serika dark")
-_t = THEMES[THEME]
-BG, BG_DARK, SUB, MAIN, TEXT_COLOR, FLASH = (_t[k] for k in ("bg", "sub_alt", "sub", "main", "text", "flash"))
+# Monkeytype "serika dark" theme. FLASH is the colour the reactive heatmap lights up to.
+BG, BG_DARK, SUB, MAIN, TEXT_COLOR, FLASH = ("#323437", "#2c2e31", "#646669", "#e2b714",
+                                             "#d1d0c5", "#ffd84a")
 
 
 def mix(a, b, f):
