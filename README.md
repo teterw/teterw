@@ -11,10 +11,6 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/challenge.svg?v=49cf6d81" width="100%" alt="can you beat my 10 word pb? start a test on monkeytype" /></a>
-</p>
-
-<p align="center">
   <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/nowplaying.svg?v=72657faf" width="100%" alt="now playing" />
 </p>
 
@@ -68,12 +64,6 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=4a2dba38" width="100%" alt="github activity" />
-</p>
-
-### `keyboard`
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/keyboard.svg?v=cfcac72c" width="100%" alt="keyboard heatmap of the characters in my public code" />
 </p>
 
 ### `contact`

@@ -6,9 +6,7 @@
 - typing.svg      "about me" typing test, with birthday and latest commit
 - monkeytype.svg  live personal bests from the Monkeytype API
 - nowplaying.svg  last played song from Last.fm (needs LASTFM_USER + LASTFM_API_KEY)
-- challenge.svg   "can you beat me?" card linking visitors to a Monkeytype test
 - activity.svg    GitHub contributions heatmap, streaks, and top languages
-- keyboard.svg    keyboard heatmap of the characters in my public code (recounted daily)
 - command*.svg    contact links styled like Monkeytype's command line
 - footer.svg      Monkeytype's key-hint footer
 
@@ -25,8 +23,6 @@ import json
 import os
 import random
 import re
-import subprocess
-import tempfile
 import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
@@ -520,113 +516,6 @@ def write_projects(gh):
         readme.write_text(text)
 
 
-# ---------------------------------------------------------------- visitor challenge
-
-def challenge(mt):
-    run = best(mt, "words", "10")
-    if not run:
-        return None
-    height = 150
-    body = [label(PAD_X, 50, "can you beat me?", 26, TEXT_COLOR, weight=700),
-            label(PAD_X, 80, "open monkeytype, pick words · 10, and try to top my best.", 14, SUB),
-            label(PAD_X, 112, "words 10", 13, SUB),
-            label(PAD_X + 78, 114, f"{int(run['wpm'])} wpm", 22, MAIN, weight=700),
-            label(PAD_X + 190, 112, f"{run['acc']:.0f}% acc", 13, SUB)]
-    # "start test" button with a blinking caret, like the test is waiting for you
-    bx, bw = WIDTH - PAD_X - 190, 190
-    body += [f'<rect x="{bx}" y="52" width="{bw}" height="46" rx="10" fill="{MAIN}"/>',
-             label(bx + bw / 2 - 6, 81, "start test", 17, BG, "middle", 700),
-             f'<rect x="{bx + bw / 2 + 50}" y="66" width="2.5" height="19" rx="1" fill="{BG}">'
-             f'<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>']
-    return svg(height, body)
-
-
-# ---------------------------------------------------------------- keyboard heatmap
-
-CODE_EXTENSIONS = {".py", ".ts", ".tsx", ".js", ".jsx", ".mjs", ".kt", ".kts", ".rs", ".c", ".h",
-                   ".cpp", ".hpp", ".cc", ".ino", ".sh", ".ps1", ".html", ".css", ".go", ".java",
-                   ".lua", ".swift", ".dart", ".vue", ".svelte"}
-SKIP_DIRS = {".git", "node_modules", "dist", "build", "target", "vendor", ".next", "out", "__pycache__"}
-KEY_ROWS = ["`1234567890-=", "qwertyuiop[]\\", "asdfghjkl;'", "zxcvbnm,./"]
-SHIFTED = dict(zip('~!@#$%^&*()_+{}|:"<>?', "`1234567890-=[]\\;',./"))
-
-
-def count_code_chars(gh):
-    """Shallow-clone my public repos and count which keys the code uses."""
-    counts = {}
-    with tempfile.TemporaryDirectory() as tmp:
-        for repo in gh["repositories"]["nodes"]:
-            if repo["name"] == GITHUB_USER:
-                continue  # generated SVGs would skew it
-            dest = Path(tmp) / repo["name"]
-            done = subprocess.run(["git", "clone", "--quiet", "--depth", "1", repo["url"] + ".git", str(dest)],
-                                  capture_output=True, timeout=120)
-            if done.returncode:
-                continue
-            for f in dest.rglob("*"):
-                if (f.suffix.lower() not in CODE_EXTENSIONS or not f.is_file()
-                        or SKIP_DIRS & set(f.relative_to(dest).parts) or f.name.endswith(".min.js")
-                        or f.stat().st_size > 200_000):
-                    continue
-                for ch in f.read_text(errors="ignore").lower():
-                    key = SHIFTED.get(ch, ch)
-                    if key == " " or any(key in row for row in KEY_ROWS):
-                        counts[key] = counts.get(key, 0) + 1
-    return counts
-
-
-def keyboard_counts(gh):
-    """Recount at most once a day (cloning every repo every 30 minutes would be wasteful)."""
-    cache = HERE / "keyboard.json"
-    if cache.exists():
-        data = json.loads(cache.read_text())
-        if data.get("date") == TODAY.isoformat():
-            return data["counts"]
-    counts = count_code_chars(gh)
-    if counts:
-        cache.write_text(json.dumps({"date": TODAY.isoformat(), "counts": counts}, indent=1, sort_keys=True) + "\n")
-    return counts
-
-
-def keyboard(counts):
-    keys = {k: v for k, v in counts.items() if k != " "}
-    if not keys:
-        return None
-    total, top_count = sum(keys.values()), max(keys.values())
-    heat = lambda n: (n / top_count) ** 0.6 if n else 0  # steep enough that rare keys stay dim
-
-    body = card_title("keys my code uses most", f"{total:,} keystrokes across my public repos")
-    key, gap, top = 46, 6, 74
-    offsets = [0, 0.7, 1.0, 1.4]  # row stagger, in keys
-    board_w = max(o + len(r) for o, r in zip(offsets, KEY_ROWS)) * (key + gap) - gap
-    x0 = (WIDTH - board_w) / 2
-    ranked = sorted(keys, key=lambda k: -keys[k])
-    for r, row in enumerate(KEY_ROWS):
-        y = top + r * (key + gap)
-        for c, k in enumerate(row):
-            x = x0 + (offsets[r] + c) * (key + gap)
-            h = heat(keys.get(k, 0))
-            fill = mix(BG_DARK, MAIN, 0.1 + 0.9 * h) if h else BG_DARK
-            text = TEXT_COLOR if h < 0.6 else BG
-            rect = f'<rect x="{x:.1f}" y="{y}" width="{key}" height="{key}" rx="8" fill="{fill}"'
-            if k in ranked[:5]:  # the hottest keys pulse, like they are being hammered
-                i = ranked.index(k)
-                rect += (f'><animate attributeName="fill" values="{fill};{FLASH};{fill}" dur="2.5s" '
-                         f'begin="{i * 0.5}s" repeatCount="indefinite"/></rect>')
-            else:
-                rect += "/>"
-            body += [rect, label(x + key / 2, y + key / 2 + 6, k, 17, text, "middle")]
-    sy = top + 4 * (key + gap)
-    sw = 6 * (key + gap) - gap
-    sx = (WIDTH - sw) / 2
-    body += [f'<rect x="{sx:.1f}" y="{sy}" width="{sw}" height="{key - 8}" rx="8" fill="{mix(BG_DARK, MAIN, 0.35)}"/>',
-             label(WIDTH / 2, sy + key / 2 + 1, "space", 14, TEXT_COLOR, "middle")]
-    ty = sy + key + 30
-    top5 = "   ".join(f"{k} {100 * keys[k] / total:.1f}%" for k in ranked[:5])
-    body.append(label(WIDTH / 2, ty, f"top keys:  {top5}", 13, SUB, "middle"))
-    return svg(ty + 24, body)
-
-
 # ---------------------------------------------------------------- contact (command line)
 
 def command_top():
@@ -693,13 +582,9 @@ def main():
         out["nowplaying"] = nowplaying(track)
     if mt:
         out["monkeytype"] = monkeytype(mt)
-        if (card := challenge(mt)):
-            out["challenge"] = card
     if gh:
         out["activity"] = activity(gh)
         write_projects(gh)
-        if (card := keyboard(keyboard_counts(gh))):
-            out["keyboard"] = card
     out["command"] = command_top()
     for i, (name, value, _) in enumerate(CONTACTS):
         out[f"command_{name}"] = command_row(name, value, selected=i == 0)
