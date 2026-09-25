@@ -38,12 +38,14 @@ ABOUT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into 
 BIRTHDAY = "15 / 05"  # day / month
 FAVORITE_ARTISTS = ["Malcolm Todd", "MacQ", "Arctic Monkeys"]
 
-# Contact bar rows: (label, value shown, link). Add more rows here, e.g. Discord.
+# Contact bar rows: (label, value shown, link). Add more rows here.
 CONTACTS = [
     ("github", "@teterw", "https://github.com/teterw"),
     ("monkeytype", "teterw", "https://monkeytype.com/profile/teterw"),
     ("instagram", "@teterwqe", "https://www.instagram.com/teterwqe/"),
     ("facebook", "nattasit.manapiyawong", "https://www.facebook.com/nattasit.manapiyawong/"),
+    ("discord", "teterw", None),  # profile links need the numeric user id, so no link
+    ("email", "teteemail27194@gmail.com", "mailto:teteemail27194@gmail.com"),
 ]
 
 # Hand-written project blurbs; repos not listed here use their GitHub description.
