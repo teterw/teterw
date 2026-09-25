@@ -71,7 +71,9 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command.svg?v=f8e0831b" width="100%" alt="command line: contact" /><br>
   <a href="https://github.com/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_github.svg?v=44fc4341" width="100%" alt="contact › github @teterw" /></a><br>
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_monkeytype.svg?v=e2ac6171" width="100%" alt="contact › monkeytype teterw" /></a>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_monkeytype.svg?v=e2ac6171" width="100%" alt="contact › monkeytype teterw" /></a><br>
+  <a href="https://www.instagram.com/teterwqe/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_instagram.svg?v=c40c0a73" width="100%" alt="contact › instagram @teterwqe" /></a><br>
+  <a href="https://www.facebook.com/nattasit.manapiyawong/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_facebook.svg?v=288222d4" width="100%" alt="contact › facebook nattasit.manapiyawong" /></a>
 </p>
 
 <p align="center">

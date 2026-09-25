@@ -42,6 +42,8 @@ FAVORITE_ARTISTS = ["Malcolm Todd", "MacQ", "Arctic Monkeys"]
 CONTACTS = [
     ("github", "@teterw", "https://github.com/teterw"),
     ("monkeytype", "teterw", "https://monkeytype.com/profile/teterw"),
+    ("instagram", "@teterwqe", "https://www.instagram.com/teterwqe/"),
+    ("facebook", "nattasit.manapiyawong", "https://www.facebook.com/nattasit.manapiyawong/"),
 ]
 
 # Hand-written project blurbs; repos not listed here use their GitHub description.
