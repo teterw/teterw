@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820 342.1320754716981" width="820" height="342.1320754716981" font-family="'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace">
 <rect width="820" height="342.1320754716981" rx="14" fill="#323437"/>
 <text x="40.0" y="44.0" font-size="20" fill="#e2b714" text-anchor="start" font-weight="700">github activity</text>
-<text x="780.0" y="44.0" font-size="15" fill="#646669" text-anchor="end">568 contributions in the last year</text>
+<text x="780.0" y="44.0" font-size="15" fill="#646669" text-anchor="end">569 contributions in the last year</text>
 <rect x="40.0" y="86.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <rect x="40.0" y="100.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <rect x="40.0" y="114.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
@@ -394,16 +394,16 @@
 <text x="595.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">8d</text>
 <text x="40.0" y="276.1" font-size="12" fill="#646669" text-anchor="start">top languages</text>
 <clipPath id="bar"><rect x="40" y="288.1320754716981" width="740" height="10" rx="5"/></clipPath>
-<rect x="40.0" y="288.1320754716981" width="547.4" height="10" fill="#e2b714" clip-path="url(#bar)"/>
+<rect x="40.0" y="288.1320754716981" width="547.3" height="10" fill="#e2b714" clip-path="url(#bar)"/>
 <rect x="40.0" y="312.1320754716981" width="9" height="9" rx="2" fill="#e2b714"/>
 <text x="54.0" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">typescript 74%</text>
-<rect x="586.9" y="288.1320754716981" width="99.7" height="10" fill="#d1d0c5" clip-path="url(#bar)"/>
+<rect x="586.8" y="288.1320754716981" width="99.7" height="10" fill="#d1d0c5" clip-path="url(#bar)"/>
 <rect x="180.2" y="312.1320754716981" width="9" height="9" rx="2" fill="#d1d0c5"/>
 <text x="194.2" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">python 13%</text>
-<rect x="686.2" y="288.1320754716981" width="40.4" height="10" fill="#b6961d" clip-path="url(#bar)"/>
+<rect x="686.0" y="288.1320754716981" width="40.4" height="10" fill="#b6961d" clip-path="url(#bar)"/>
 <rect x="290.6" y="312.1320754716981" width="9" height="9" rx="2" fill="#b6961d"/>
 <text x="304.6" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">kotlin 5%</text>
-<rect x="726.1" y="288.1320754716981" width="24.9" height="10" fill="#898a85" clip-path="url(#bar)"/>
+<rect x="725.9" y="288.1320754716981" width="25.1" height="10" fill="#898a85" clip-path="url(#bar)"/>
 <rect x="393.5" y="312.1320754716981" width="9" height="9" rx="2" fill="#898a85"/>
 <text x="407.5" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">rust 3%</text>
 <rect x="750.5" y="288.1320754716981" width="17.7" height="10" fill="#8a7626" clip-path="url(#bar)"/>

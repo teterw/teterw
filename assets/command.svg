@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820 64" width="820" height="64" font-family="'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace">
+<rect width="820" height="64" rx="14" fill="#323437"/>
+<rect x="20" y="14" width="780" height="38" rx="8" fill="#2c2e31"/>
+<text x="40.0" y="39.0" font-size="18" fill="#646669" text-anchor="start">›</text>
+<text x="62.0" y="39" font-size="17" fill="#d1d0c5" opacity="0">c<set attributeName="opacity" to="1" begin="0.40s" fill="freeze"/></text>
+<text x="72.4" y="39" font-size="17" fill="#d1d0c5" opacity="0">o<set attributeName="opacity" to="1" begin="0.52s" fill="freeze"/></text>
+<text x="82.8" y="39" font-size="17" fill="#d1d0c5" opacity="0">n<set attributeName="opacity" to="1" begin="0.64s" fill="freeze"/></text>
+<text x="93.2" y="39" font-size="17" fill="#d1d0c5" opacity="0">t<set attributeName="opacity" to="1" begin="0.76s" fill="freeze"/></text>
+<text x="103.6" y="39" font-size="17" fill="#d1d0c5" opacity="0">a<set attributeName="opacity" to="1" begin="0.88s" fill="freeze"/></text>
+<text x="114.0" y="39" font-size="17" fill="#d1d0c5" opacity="0">c<set attributeName="opacity" to="1" begin="1.00s" fill="freeze"/></text>
+<text x="124.4" y="39" font-size="17" fill="#d1d0c5" opacity="0">t<set attributeName="opacity" to="1" begin="1.12s" fill="freeze"/></text>
+<rect x="136.8" y="25" width="2.5" height="18" rx="1" fill="#e2b714"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+<text x="780.0" y="39.0" font-size="12" fill="#646669" text-anchor="end">esc to close</text>
+</svg>

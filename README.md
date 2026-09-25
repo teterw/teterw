@@ -3,11 +3,15 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=0edc3bcf" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=de0211a2" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=2efbc894" width="100%" alt="monkeytype personal bests" /></a>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=0e5eb757" width="100%" alt="monkeytype personal bests" /></a>
+</p>
+
+<p align="center">
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/challenge.svg?v=49cf6d81" width="100%" alt="can you beat my 10 word pb? start a test on monkeytype" /></a>
 </p>
 
 <p align="center">
@@ -21,24 +25,22 @@
 
 ### `projects`
 
+<sub>my most recently pushed repos, updated automatically</sub>
+
+<!-- PROJECTS:START -->
 <table>
   <tr>
     <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/derive">derive · ทีละขั้น</a></b><br>
-      <sub>Bilingual (ไทย / English) maths practice site, from Thai secondary school maths up to Calculus II. Step-by-step derivations, streaks, and progress stats: Monkeytype + LeetCode, but for maths.</sub>
+      <b><a href="https://github.com/teterw/minesweeper">minesweeper</a></b><br>
+      <sub>An infinite Minesweeper for your terminal. Rust, mouse + keyboard, Windows and Linux.</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/next.js-323437?style=flat-square&logo=nextdotjs&logoColor=e2b714" />
-      <img src="https://img.shields.io/badge/typescript-323437?style=flat-square&logo=typescript&logoColor=e2b714" />
-      <img src="https://img.shields.io/badge/postgres-323437?style=flat-square&logo=postgresql&logoColor=e2b714" />
-      <a href="https://scan-cleaner-cn1w.vercel.app"><img src="https://img.shields.io/badge/live_site-e2b714?style=flat-square&logo=vercel&logoColor=323437" /></a>
+      <img src="https://img.shields.io/badge/rust-323437?style=flat-square&logo=rust&logoColor=e2b714" alt="rust" />
     </td>
     <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/fedoralink">fedoralink</a></b><br>
-      <sub>Connect your Android phone to Fedora over Bluetooth. Notifications, clipboard, and battery in GNOME Quick Settings, with no Wi-Fi network needed.</sub>
+      <b><a href="https://github.com/teterw/ctf-id">ctf-id</a></b><br>
+      <sub>Identify a CTF challenge file and get suggested tools + copy-paste commands</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" />
-      <img src="https://img.shields.io/badge/kotlin-323437?style=flat-square&logo=kotlin&logoColor=e2b714" />
-      <img src="https://img.shields.io/badge/gnome-323437?style=flat-square&logo=gnome&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/shell-323437?style=flat-square&logo=gnubash&logoColor=e2b714" alt="shell" />
     </td>
   </tr>
   <tr>
@@ -46,24 +48,40 @@
       <b><a href="https://github.com/teterw/catsole">catsole</a></b><br>
       <sub>USB-tethered Arduino desk display: synced song lyrics or live PC stats on an OLED screen, switched with an NFC tap.</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" />
-      <img src="https://img.shields.io/badge/c++-323437?style=flat-square&logo=cplusplus&logoColor=e2b714" />
-      <img src="https://img.shields.io/badge/arduino-323437?style=flat-square&logo=arduino&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
+      <img src="https://img.shields.io/badge/c%2B%2B-323437?style=flat-square&logo=cplusplus&logoColor=e2b714" alt="c++" />
+      <img src="https://img.shields.io/badge/html-323437?style=flat-square&logo=html5&logoColor=e2b714" alt="html" />
     </td>
     <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/pdf-maker-android">pdf-maker-android</a></b><br>
-      <sub>Offline Android app that turns images and PDFs into a single PDF. Bulk selection, sorting by name/date/size, and merging that keeps text sharp.</sub>
+      <b><a href="https://github.com/teterw/fedoralink">fedoralink</a></b><br>
+      <sub>Connect your Android phone to Fedora over Bluetooth. Notifications, clipboard, and battery in GNOME Quick Settings, with no Wi-Fi network needed.</sub>
       <br><br>
-      <img src="https://img.shields.io/badge/kotlin-323437?style=flat-square&logo=kotlin&logoColor=e2b714" />
-      <img src="https://img.shields.io/badge/android-323437?style=flat-square&logo=android&logoColor=e2b714" />
+      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
+      <img src="https://img.shields.io/badge/kotlin-323437?style=flat-square&logo=kotlin&logoColor=e2b714" alt="kotlin" />
+      <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
     </td>
   </tr>
 </table>
+<!-- PROJECTS:END -->
 
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=149ef243" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=95703d81" width="100%" alt="github activity" />
+</p>
+
+### `keyboard`
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/keyboard.svg?v=cfcac72c" width="100%" alt="keyboard heatmap of the characters in my public code" />
+</p>
+
+### `contact`
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command.svg?v=f8e0831b" width="100%" alt="command line: contact" /><br>
+  <a href="https://github.com/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_github.svg?v=44fc4341" width="100%" alt="contact › github @teterw" /></a><br>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_monkeytype.svg?v=e2ac6171" width="100%" alt="contact › monkeytype teterw" /></a>
 </p>
 
 <p align="center">
