@@ -3,6 +3,9 @@ name: Update profile cards
 on:
   schedule:
     - cron: "*/30 * * * *"
+    # Guaranteed daily refresh just after midnight in Thailand (17:07 UTC), in case
+    # GitHub skips some of the 30-minute runs, which it does when it's busy.
+    - cron: "7 17 * * *"
   workflow_dispatch:
   push:
     branches: [main]
