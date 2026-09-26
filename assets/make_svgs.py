@@ -575,17 +575,25 @@ def command_top(steps, total):
     return svg(height, body)
 
 
+def fade(attr, off_value, on_value, window, total, ease=0.3):
+    """A looping SMIL animation that eases to on_value for the window (start, end), then back."""
+    on, off = window
+    times = (0, on, on + ease, off, min(off + ease, total), total)
+    values = (off_value, off_value, on_value, on_value, off_value, off_value)
+    return (f'<animate attributeName="{attr}" values="{";".join(map(str, values))}" '
+            f'keyTimes="{";".join(f"{x / total:.4f}" for x in times)}" '
+            f'dur="{total:.2f}s" repeatCount="indefinite"/>')
+
+
 def command_row(name, value, selected, total):
-    """One contact row; it lights up while its name is in the search box."""
+    """One contact row; the whole box lights up while its name is in the search box."""
     height = 44
-    on, off = selected
-    times = (0, on, off)
-    body = [f'<rect x="{PAD_X - 20}" y="4" width="{WIDTH - 2 * PAD_X + 40}" height="36" rx="8" '
-            f'fill="{TEXT_COLOR}" opacity="0">{discrete("opacity", (0, 1, 0), times, total)}</rect>',
+    body = [f'<rect width="{WIDTH}" height="{height}" rx="14" fill="{TEXT_COLOR}" opacity="0">'
+            f'{fade("opacity", 0, 1, selected, total)}</rect>',
             f'<text x="{PAD_X:.1f}" y="28.0" font-size="15" fill="{TEXT_COLOR}" text-anchor="start">'
-            f'{escape(f"contact  ›  {name}")}{discrete("fill", (TEXT_COLOR, BG, TEXT_COLOR), times, total)}</text>',
+            f'{escape(f"contact  ›  {name}")}{fade("fill", TEXT_COLOR, BG, selected, total)}</text>',
             f'<text x="{WIDTH - PAD_X:.1f}" y="28.0" font-size="14" fill="{SUB}" text-anchor="end">'
-            f'{escape(f"{value}  ↵")}{discrete("fill", (SUB, BG, SUB), times, total)}</text>']
+            f'{escape(f"{value}  ↵")}{fade("fill", SUB, BG, selected, total)}</text>']
     return svg(height, body)
 
 
