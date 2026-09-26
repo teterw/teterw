@@ -7,7 +7,7 @@
 - monkeytype.svg  live personal bests from the Monkeytype API
 - nowplaying.svg  last played song from Last.fm (needs LASTFM_USER + LASTFM_API_KEY)
 - activity.svg    GitHub contributions heatmap, streaks, and top languages
-- command*.svg    contact links styled like Monkeytype's command line
+- command*.svg    contact links styled like Monkeytype's command line, typed and lit up in turn
 - footer.svg      Monkeytype's key-hint footer
 
 It also rewrites the projects table in README.md with my most recently pushed repos.
@@ -522,33 +522,71 @@ def write_projects(gh):
 
 # ---------------------------------------------------------------- contact (command line)
 
-def command_top():
-    """Monkeytype's command line: a search box that types "contact"."""
-    height = 64
+def command_timeline():
+    """One shared loop for the contact bar: type a contact's name, light up its row, delete it, next.
+
+    Every command*.svg is a separate <img> (so each row can be its own link), but they all use this
+    same clock and loop length, so the search box and the rows stay in step.
+    """
+    random.seed(7)  # deterministic output, so re-running doesn't create a git diff
+    t, steps = 0.6, []
+    for name, _, _ in CONTACTS:
+        typed = []
+        for _ in name:
+            t += random.uniform(0.07, 0.13)
+            typed.append(t)
+        selected = t + 0.15
+        t = selected + 1.8
+        deleted = []
+        for _ in name:
+            t += 0.045
+            deleted.append(t)
+        steps.append({"name": name, "typed": typed, "deleted": deleted[::-1],  # last char goes first
+                      "selected": (selected, deleted[0] - 0.045)})
+        t += 0.45
+    return steps, t
+
+
+def discrete(attr, values, times, total):
+    """A looping SMIL animation that jumps between values at the given times (in seconds)."""
+    key_times = ";".join(f"{x / total:.4f}" for x in times)
+    return (f'<animate attributeName="{attr}" values="{";".join(map(str, values))}" keyTimes="{key_times}" '
+            f'calcMode="discrete" dur="{total:.2f}s" repeatCount="indefinite"/>')
+
+
+def command_top(steps, total):
+    """Monkeytype's command line: a search box that types each contact in turn."""
+    height, x0, char_w = 64, PAD_X + 22, 10.4
     body = [f'<rect x="{PAD_X - 20}" y="14" width="{WIDTH - 2 * PAD_X + 40}" height="38" rx="8" fill="{BG_DARK}"/>',
             label(PAD_X, 39, "›", 18, SUB)]
-    word, t = "contact", 0.4
-    for i, ch in enumerate(word):
-        x = PAD_X + 22 + i * 10.4
-        body.append(f'<text x="{x:.1f}" y="39" font-size="17" fill="{TEXT_COLOR}" opacity="0">{ch}'
-                    f'<set attributeName="opacity" to="1" begin="{t + i * 0.12:.2f}s" fill="freeze"/></text>')
-    caret_x = PAD_X + 22 + len(word) * 10.4 + 2
-    body += [f'<rect x="{caret_x:.1f}" y="25" width="2.5" height="18" rx="1" fill="{MAIN}">'
-             f'<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>',
+    caret = [(0, 0)]  # (time, characters in the box)
+    for step in steps:
+        for i, ch in enumerate(step["name"]):
+            on, off = step["typed"][i], step["deleted"][i]
+            body.append(f'<text x="{x0 + i * char_w:.1f}" y="39" font-size="17" fill="{TEXT_COLOR}" opacity="0">'
+                        f'{escape(ch)}{discrete("opacity", (0, 1, 0), (0, on, off), total)}</text>')
+        caret += [(at, i + 1) for i, at in enumerate(step["typed"])]
+        caret += sorted((at, i) for i, at in enumerate(step["deleted"]))
+    caret.sort()
+    body += [f'<rect x="{x0 - 1:.1f}" y="25" width="2.5" height="18" rx="1" fill="{MAIN}">'
+             + discrete("x", [f"{x0 - 1 + n * char_w:.1f}" for _, n in caret], [at for at, _ in caret], total)
+             + '<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>',
              label(WIDTH - PAD_X, 39, "esc to close", 12, SUB, "end")]
     return svg(height, body)
 
 
-def command_row(name, value, selected):
+def command_row(name, value, selected, total):
+    """One contact row; it lights up while its name is in the search box."""
     height = 44
-    body = []
-    if selected:
-        body.append(f'<rect x="{PAD_X - 20}" y="4" width="{WIDTH - 2 * PAD_X + 40}" height="36" rx="8" fill="{TEXT_COLOR}"/>')
-    fg, sub = (BG, BG) if selected else (TEXT_COLOR, SUB)
-    body += [label(PAD_X, 28, f"contact  ›  {name}", 15, fg),
-             label(WIDTH - PAD_X, 28, f"{value}  ↵", 14, sub, "end")]
+    on, off = selected
+    times = (0, on, off)
+    body = [f'<rect x="{PAD_X - 20}" y="4" width="{WIDTH - 2 * PAD_X + 40}" height="36" rx="8" '
+            f'fill="{TEXT_COLOR}" opacity="0">{discrete("opacity", (0, 1, 0), times, total)}</rect>',
+            f'<text x="{PAD_X:.1f}" y="28.0" font-size="15" fill="{TEXT_COLOR}" text-anchor="start">'
+            f'{escape(f"contact  ›  {name}")}{discrete("fill", (TEXT_COLOR, BG, TEXT_COLOR), times, total)}</text>',
+            f'<text x="{WIDTH - PAD_X:.1f}" y="28.0" font-size="14" fill="{SUB}" text-anchor="end">'
+            f'{escape(f"{value}  ↵")}{discrete("fill", (SUB, BG, SUB), times, total)}</text>']
     return svg(height, body)
-
 
 
 def footer():
@@ -589,9 +627,10 @@ def main():
     if gh:
         out["activity"] = activity(gh)
         write_projects(gh)
-    out["command"] = command_top()
-    for i, (name, value, _) in enumerate(CONTACTS):
-        out[f"command_{name}"] = command_row(name, value, selected=i == 0)
+    steps, loop = command_timeline()
+    out["command"] = command_top(steps, loop)
+    for (name, value, _), step in zip(CONTACTS, steps):
+        out[f"command_{name}"] = command_row(name, value, step["selected"], loop)
     if gh:
         text = ABOUT
         commit = latest_commit(gh)
