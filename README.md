@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=1eed232c" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=65584970" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
 </p>
 
 <p align="center">
@@ -27,6 +27,14 @@
 <table>
   <tr>
     <td width="50%" valign="top">
+      <b><a href="https://github.com/teterw/codeblocks-dark">codeblocks-dark</a></b><br>
+      <sub>One-command dark themes for Code::Blocks on Windows, with live terminal previews</sub>
+      <br><br>
+      <img src="https://img.shields.io/badge/powershell-323437?style=flat-square&logo=powershell&logoColor=e2b714" alt="powershell" />
+      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
+      <img src="https://img.shields.io/badge/batchfile-323437?style=flat-square" alt="batchfile" />
+    </td>
+    <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/nub-nueng-hair-studio">nub-nueng-hair-studio</a></b><br>
       <sub>Proposal demo site for นับหนึ่งแฮร์ สตูดิโอ (Nub-Nueng Hair Studio) — static Next.js, all content in one data file, every unconfirmed value a visible placeholder.</sub>
       <br><br>
@@ -35,27 +43,19 @@
       <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
       <a href="https://nub-nueng-hair-studio.vercel.app"><img src="https://img.shields.io/badge/live_site-e2b714?style=flat-square&logo=vercel&logoColor=323437" alt="live site" /></a>
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/minesweeper">minesweeper</a></b><br>
       <sub>An infinite Minesweeper for your terminal. Rust, mouse + keyboard, Windows and Linux.</sub>
       <br><br>
       <img src="https://img.shields.io/badge/rust-323437?style=flat-square&logo=rust&logoColor=e2b714" alt="rust" />
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/ctf-id">ctf-id</a></b><br>
       <sub>Identify a CTF challenge file and get suggested tools + copy-paste commands</sub>
       <br><br>
       <img src="https://img.shields.io/badge/shell-323437?style=flat-square&logo=gnubash&logoColor=e2b714" alt="shell" />
-    </td>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/catsole">catsole</a></b><br>
-      <sub>USB-tethered Arduino desk display: synced song lyrics or live PC stats on an OLED screen, switched with an NFC tap.</sub>
-      <br><br>
-      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
-      <img src="https://img.shields.io/badge/c%2B%2B-323437?style=flat-square&logo=cplusplus&logoColor=e2b714" alt="c++" />
-      <img src="https://img.shields.io/badge/html-323437?style=flat-square&logo=html5&logoColor=e2b714" alt="html" />
     </td>
   </tr>
 </table>
@@ -64,7 +64,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=13e3d05d" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=13c67858" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
