@@ -4,7 +4,7 @@
 
 - header.svg      Monkeytype-style top bar + test config bar
 - typing.svg      "about me" typing test, with birthday and latest commit
-- monkeytype.svg  live personal bests from the Monkeytype API
+- monkeytype.svg  live personal bests from the Monkeytype API, numbers rolling up on load
 - nowplaying.svg  last played song from Last.fm (needs LASTFM_USER + LASTFM_API_KEY)
 - activity.svg    GitHub contributions heatmap, streaks, and top languages
 - command*.svg    contact links styled like Monkeytype's command line, typed and lit up in turn
@@ -295,6 +295,38 @@ def is_new_pb(run):
     return run is not None and (TODAY - pb_date(run)).days < NEW_PB_DAYS
 
 
+def rolling(x, y, text, size, fill, anchor="start", delay=0.0, dur=1.6):
+    """Text whose digits roll up from 0 to their value once, like an odometer, then stay put.
+
+    Each digit is a clipped vertical strip of numerals that scrolls up and eases to a stop; the
+    rightmost digits spin an extra lap or two. Without SMIL the strips simply rest on the value.
+    """
+    char_w, line_h = size * 0.6, size * 1.25
+    width = len(text) * char_w
+    x0 = x - width / 2 if anchor == "middle" else x - width if anchor == "end" else x
+    clip = f"roll{x0:.0f}-{y:.0f}"
+    parts = [f'<clipPath id="{clip}"><rect x="{x0 - 2:.1f}" y="{y - size * 0.9:.1f}" '
+             f'width="{width + 4:.1f}" height="{size * 1.15:.1f}"/></clipPath>',
+             f'<g clip-path="url(#{clip})" font-size="{size}" fill="{fill}" text-anchor="middle">']
+    total = dur + delay
+    for i, ch in enumerate(text):
+        cx = x0 + (i + 0.5) * char_w
+        if not ch.isdigit():
+            parts.append(f'<text x="{cx:.1f}" y="{y:.1f}">{escape(ch)}</text>')
+            continue
+        spins = min(sum(c.isdigit() for c in text[:i]), 2)  # digits further right spin more
+        strip = [str(n % 10) for n in range(spins * 10 + int(ch) + 1)]
+        rise = (len(strip) - 1) * line_h
+        parts.append(
+            '<g>' + "".join(f'<text x="{cx:.1f}" y="{y + (n - len(strip) + 1) * line_h:.1f}">{d}</text>'
+                            for n, d in enumerate(strip))
+            + f'<animateTransform attributeName="transform" type="translate" '
+              f'values="0 {rise:.1f};0 {rise:.1f};0 0" keyTimes="0;{delay / total:.4f};1" '
+              f'calcMode="spline" keySplines="0 0 1 1;0.2 0.7 0.2 1" dur="{total:.2f}s" fill="freeze"/></g>')
+    parts.append("</g>")
+    return "".join(parts)
+
+
 def monkeytype(mt):
     modes = (("time", ("15", "30", "60", "120")), ("words", ("10", "25", "50", "100")))
     fresh = [(pb_date(run), mode, length) for mode, lengths in modes for length in lengths
@@ -319,7 +351,7 @@ def monkeytype(mt):
     col_w = (WIDTH - 2 * PAD_X) / len(columns)
     for i, (name, value) in enumerate(columns):
         x = PAD_X + i * col_w
-        body += [label(x, 82, name, 12), label(x, 110, value, 20, TEXT_COLOR)]
+        body += [label(x, 82, name, 12), rolling(x, 110, value, 20, TEXT_COLOR, delay=0.2 + i * 0.1)]
 
     panel_w, top, panel_h = (WIDTH - 2 * PAD_X - 20) / 2, 132, 140
     for p, (mode, lengths) in enumerate(modes):
@@ -331,7 +363,8 @@ def monkeytype(mt):
             x = px + 18 + i * cw + cw / 2
             run = best(mt, mode, length)
             body.append(label(x, top + 48, f"{length}{'s' if mode == 'time' else ''}", 12, SUB, "middle"))
-            body.append(label(x, top + 84, int(run["wpm"]) if run else "-", 30, MAIN, "middle"))
+            body.append(rolling(x, top + 84, str(int(run["wpm"])), 30, MAIN, "middle", 0.5 + (p * 4 + i) * 0.08)
+                        if run else label(x, top + 84, "-", 30, MAIN, "middle"))
             body.append(label(x, top + 104, f"{run['acc']:.0f}% acc" if run else "", 11, SUB, "middle"))
             if is_new_pb(run):
                 # Pulsing "new pb" pill, like Monkeytype's crown on a fresh personal best.
