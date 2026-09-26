@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=0cd91bf7" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=1eed232c" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
 </p>
 
 <p align="center">
@@ -64,7 +64,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=1445daa4" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=13e3d05d" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
