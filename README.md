@@ -71,12 +71,12 @@
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command.svg?v=195f2ed8" width="100%" alt="command line: contact" /><br>
-  <a href="https://github.com/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_github.svg?v=bc592563" width="100%" alt="contact › github @teterw" /></a><br>
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_monkeytype.svg?v=77b10d8a" width="100%" alt="contact › monkeytype teterw" /></a><br>
-  <a href="https://www.instagram.com/teterwqe/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_instagram.svg?v=f0c50575" width="100%" alt="contact › instagram @teterwqe" /></a><br>
-  <a href="https://www.facebook.com/nattasit.manapiyawong/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_facebook.svg?v=863806b0" width="100%" alt="contact › facebook nattasit.manapiyawong" /></a><br>
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_discord.svg?v=f6f8ef3d" width="100%" alt="contact › discord teterw" /><br>
-  <a href="mailto:teteemail27194@gmail.com"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_email.svg?v=3b9dc90a" width="100%" alt="contact › email teteemail27194@gmail.com" /></a>
+  <a href="https://github.com/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_github.svg?v=511e3ae3" width="100%" alt="contact › github @teterw" /></a><br>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_monkeytype.svg?v=171bd6d7" width="100%" alt="contact › monkeytype teterw" /></a><br>
+  <a href="https://www.instagram.com/teterwqe/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_instagram.svg?v=d3a0c6ec" width="100%" alt="contact › instagram @teterwqe" /></a><br>
+  <a href="https://www.facebook.com/nattasit.manapiyawong/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_facebook.svg?v=3ed39660" width="100%" alt="contact › facebook nattasit.manapiyawong" /></a><br>
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_discord.svg?v=a10c40cd" width="100%" alt="contact › discord teterw" /><br>
+  <a href="mailto:teteemail27194@gmail.com"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/command_email.svg?v=85001f40" width="100%" alt="contact › email teteemail27194@gmail.com" /></a>
 </p>
 
 <p align="center">
