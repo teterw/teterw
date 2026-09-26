@@ -384,6 +384,7 @@
 <rect x="769.0" y="128.1" width="11.0" height="11.0" rx="2" fill="#b4951b"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#b4951b;#b4951b;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3546;0.3575;0.3778;0.9269;0.9298;0.9500;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
 <rect x="769.0" y="142.1" width="11.0" height="11.0" rx="2" fill="#b4951b"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#b4951b;#b4951b;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3597;0.3626;0.3829;0.9320;0.9349;0.9551;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
 <rect x="769.0" y="156.1" width="11.0" height="11.0" rx="2" fill="#635728"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#635728;#635728;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3648;0.3677;0.3880;0.9371;0.9400;0.9602;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
+<rect x="769.0" y="170.1" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <text x="40.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">public repos</text>
 <text x="40.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">21</text>
 <text x="225.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">stars</text>
