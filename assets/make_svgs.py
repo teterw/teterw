@@ -37,6 +37,7 @@ ABOUT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into 
          "with a ton of hobbies, and i'm also addicted to typing.")
 BIRTHDAY = "15 / 05"  # day / month
 FAVORITE_ARTISTS = ["Malcolm Todd", "MacQ", "Arctic Monkeys"]
+TYPO_WORDS = ["assumption", "hobbyist"]  # words the about me typing test fat-fingers, then fixes
 
 # Contact bar rows: (label, value shown, link). Add more rows here.
 CONTACTS = [
@@ -239,8 +240,8 @@ def header():
     return svg(height, body)
 
 
-def typing(text, right, typos=2):
-    """Monkeytype-style typing test. A couple of words get fat-fingered: the wrong letters turn red
+def typing(text, right):
+    """Monkeytype-style typing test. The TYPO_WORDS get fat-fingered: the wrong letters turn red
     and the word gets a red underline, then they're backspaced and retyped correctly."""
     random.seed(7)  # deterministic output, so re-running doesn't create a git diff
     top, char_w, line_h, font = 92, 14.4, 40, 24
@@ -261,11 +262,11 @@ def typing(text, right, typos=2):
     chars = [(ch, PAD_X + col * char_w, top + row * line_h)
              for row, line in enumerate(lines) for col, ch in enumerate(line)]
 
-    # Typos go in long plain words of the fixed intro (not the live commit message), one per stretch.
-    words = [(m.start(), m.end()) for m in re.finditer(r"[a-z]{6,}", "".join(lines)[:len(ABOUT)])]
-    stretch = len(words) / typos
-    typo_words = [random.choice(words[int(i * stretch):int((i + 1) * stretch)]) for i in range(typos)]
-    typo_at = {w0 + random.randint(1, w1 - w0 - 3): (w0, w1) for w0, w1 in typo_words}
+    # Typos go in the TYPO_WORDS of the fixed intro (not the live commit message).
+    typo_at = {}
+    for word in TYPO_WORDS:
+        if m := re.search(rf"\b{re.escape(word)}\b", "".join(lines)[:len(ABOUT)]):
+            typo_at[m.start() + random.randint(1, len(word) - 3)] = (m.start(), m.end())
 
     # Human-ish keystroke timeline: colour changes per character, caret moves, and underlines.
     fills = [[(0, SUB)] for _ in chars]
