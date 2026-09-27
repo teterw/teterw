@@ -3,7 +3,7 @@
     GH_TOKEN=$(gh auth token) python assets/make_svgs.py
 
 - header.svg      Monkeytype-style top bar + test config bar
-- typing.svg      "about me" typing test, with birthday and latest commit
+- typing.svg      "about me" typing test (with a couple of typos), birthday and latest commit
 - monkeytype.svg  live personal bests from the Monkeytype API, numbers rolling up on load
 - nowplaying.svg  last played song from Last.fm (needs LASTFM_USER + LASTFM_API_KEY)
 - activity.svg    GitHub contributions heatmap, streaks, and top languages
@@ -72,6 +72,7 @@ TODAY = datetime.now(BANGKOK).date()
 # Monkeytype "serika dark" theme. FLASH is the colour the reactive heatmap lights up to.
 BG, BG_DARK, SUB, MAIN, TEXT_COLOR, FLASH = ("#323437", "#2c2e31", "#646669", "#e2b714",
                                              "#d1d0c5", "#ffd84a")
+ERROR = "#ca4754"  # serika dark error colour, for mistyped letters
 
 
 def mix(a, b, f):
@@ -238,7 +239,9 @@ def header():
     return svg(height, body)
 
 
-def typing(text, right):
+def typing(text, right, typos=2):
+    """Monkeytype-style typing test. A couple of words get fat-fingered: the wrong letters turn red
+    and the word gets a red underline, then they're backspaced and retyped correctly."""
     random.seed(7)  # deterministic output, so re-running doesn't create a git diff
     top, char_w, line_h, font = 92, 14.4, 40, 24
     max_chars, hold = int((WIDTH - 2 * PAD_X) / char_w), 3.0
@@ -254,36 +257,66 @@ def typing(text, right):
     lines.append(line)
     height = top + line_h * len(lines) + 12
 
-    # Position of every character, plus a human-ish keystroke timeline.
-    chars, t = [], 0.8
-    for row, line in enumerate(lines):
-        for col, ch in enumerate(line):
-            t += random.uniform(0.045, 0.09) + (0.12 if ch in ",.?!:" else 0)
-            chars.append((ch, PAD_X + col * char_w, top + row * line_h, t))
+    # Position of every character.
+    chars = [(ch, PAD_X + col * char_w, top + row * line_h)
+             for row, line in enumerate(lines) for col, ch in enumerate(line)]
+
+    # Typos go in long plain words of the fixed intro (not the live commit message), one per stretch.
+    words = [(m.start(), m.end()) for m in re.finditer(r"[a-z]{6,}", "".join(lines)[:len(ABOUT)])]
+    stretch = len(words) / typos
+    typo_words = [random.choice(words[int(i * stretch):int((i + 1) * stretch)]) for i in range(typos)]
+    typo_at = {w0 + random.randint(1, w1 - w0 - 3): (w0, w1) for w0, w1 in typo_words}
+
+    # Human-ish keystroke timeline: colour changes per character, caret moves, and underlines.
+    fills = [[(0, SUB)] for _ in chars]
+    caret = [(0, 0)]  # (time, index of the next character to type)
+    underlines = []  # (first char, end char, shown from, hidden at)
+    t = 0.8
+    for i, (ch, _, _) in enumerate(chars):
+        if i in typo_at:
+            first = None
+            for j in (i, i + 1):  # two wrong keys in a row
+                t += random.uniform(0.045, 0.09)
+                first = first or t
+                fills[j].append((t, ERROR))
+                caret.append((t, j + 1))
+            t += 0.45  # notice the mistake
+            for j in (i + 1, i):  # backspace them
+                t += 0.1
+                fills[j].append((t, SUB))
+                caret.append((t, j))
+            underlines.append((*typo_at[i], first, t))
+            t += 0.15
+        t += random.uniform(0.045, 0.09) + (0.12 if ch in ",.?!:" else 0)
+        fills[i].append((t, TEXT_COLOR))
+        caret.append((t, i + 1))
     total = t + hold
-    kt = lambda s: f"{s / total:.4f}"
+
+    def anim(attr, steps):
+        """Discrete looping animation; everything snaps back just before the loop restarts."""
+        steps = steps + [(total - 0.05, steps[0][1])]
+        return (f'<animate attributeName="{attr}" values="{";".join(str(v) for _, v in steps)}" '
+                f'keyTimes="{";".join(f"{at / total:.4f}" for at, _ in steps)}" calcMode="discrete" '
+                f'dur="{total:.2f}s" repeatCount="indefinite"/>')
 
     body = card_title("about me", right)
-    for ch, x, y, at in chars:
-        if ch == " ":
-            continue
-        body.append(
-            f'<text x="{x:.1f}" y="{y}" font-size="{font}" fill="{SUB}">{escape(ch)}'
-            f'<animate attributeName="fill" values="{SUB};{TEXT_COLOR};{SUB}" '
-            f'keyTimes="0;{kt(at)};{kt(total - 0.05)}" calcMode="discrete" '
-            f'dur="{total:.2f}s" repeatCount="indefinite"/></text>')
+    for (ch, x, y), steps in zip(chars, fills):
+        if ch != " ":
+            body.append(f'<text x="{x:.1f}" y="{y}" font-size="{font}" fill="{SUB}">{escape(ch)}'
+                        f'{anim("fill", steps)}</text>')
+    for w0, w1, on, off in underlines:
+        (_, x0, y), (_, x1, _) = chars[w0], chars[w1 - 1]
+        body.append(f'<rect x="{x0:.1f}" y="{y + 7}" width="{x1 + char_w - x0:.1f}" height="2" rx="1" '
+                    f'fill="{ERROR}" opacity="0">{anim("opacity", [(0, 0), (on, 1), (off, 0)])}</rect>')
 
     # Caret: sits before the next character to type.
-    xs = [chars[0][1]] + [x + char_w for _, x, _, _ in chars]
-    ys = [chars[0][2]] + [y for _, _, y, _ in chars]
-    times = ";".join(["0"] + [kt(at) for *_, at in chars])
-    anim = f'keyTimes="{times}" calcMode="discrete" dur="{total:.2f}s" repeatCount="indefinite"'
+    xs = [chars[0][1]] + [x + char_w for _, x, _ in chars]
+    ys = [chars[0][2]] + [y for _, _, y in chars]
     body.append(
         f'<rect width="2.5" height="{font + 4}" rx="1" fill="{MAIN}">'
-        f'<animate attributeName="x" values="{";".join(f"{x:.1f}" for x in xs)}" {anim}/>'
-        f'<animate attributeName="y" values="{";".join(str(y - font + 1) for y in ys)}" {anim}/>'
-        f'<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>'
-        f'</rect>')
+        + anim("x", [(at, f"{xs[n]:.1f}") for at, n in caret])
+        + anim("y", [(at, ys[n] - font + 1) for at, n in caret])
+        + '<animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>')
     return svg(height, body)
 
 
