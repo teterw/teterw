@@ -36,7 +36,7 @@ ABOUT = ("hello, i'm teterw, a student at assumption college thonburi. i'm into 
          "tech and always learning something new by building projects. i'm a hobbyist "
          "with a ton of hobbies, and i'm also addicted to typing.")
 BIRTHDAY = "15 / 05"  # day / month
-FAVORITE_ARTISTS = ["Malcolm Todd", "MacQ", "Arctic Monkeys"]
+FAVORITE_ARTISTS = ["Malcolm Todd", "MarQ", "Arctic Monkeys"]
 TYPO_WORDS = ["assumption", "hobbyist"]  # words the about me typing test fat-fingers, then fixes
 
 # Contact bar rows: (label, value shown, link). Add more rows here.

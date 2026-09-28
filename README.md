@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/nowplaying.svg?v=72657faf" width="100%" alt="now playing" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/nowplaying.svg?v=46f5fa13" width="100%" alt="now playing" />
 </p>
 
 <p align="center">
