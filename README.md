@@ -45,7 +45,7 @@
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/nub-nueng-hair-studio">nub-nueng-hair-studio</a></b><br>
+      <b><a href="https://github.com/teterw/nub-nueng-hair-studio-DEMO">nub-nueng-hair-studio-DEMO</a></b><br>
       <sub>Proposal demo site for นับหนึ่งแฮร์ สตูดิโอ (Nub-Nueng Hair Studio) — static Next.js, all content in one data file, every unconfirmed value a visible placeholder.</sub>
       <br><br>
       <img src="https://img.shields.io/badge/typescript-323437?style=flat-square&logo=typescript&logoColor=e2b714" alt="typescript" />
@@ -66,7 +66,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=c54cba43" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=a12c04dd" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
