@@ -66,7 +66,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=385193e1" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=053c79dd" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
