@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=7fe36a2f" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=576feeb9" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
 </p>
 
 <p align="center">
@@ -27,6 +27,12 @@
 <table>
   <tr>
     <td width="50%" valign="top">
+      <b><a href="https://github.com/teterw/chiron-stick">chiron-stick</a></b><br>
+      <sub>Portable Linux "PC doctor" on a USB SSD: boot it, check the hardware, unplug, leave no trace.</sub>
+      <br><br>
+      <img src="https://img.shields.io/badge/shell-323437?style=flat-square&logo=gnubash&logoColor=e2b714" alt="shell" />
+    </td>
+    <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/catsole">catsole</a></b><br>
       <sub>USB-tethered Arduino desk display: synced song lyrics or live PC stats on an OLED screen, switched with an NFC tap.</sub>
       <br><br>
@@ -34,6 +40,8 @@
       <img src="https://img.shields.io/badge/c%2B%2B-323437?style=flat-square&logo=cplusplus&logoColor=e2b714" alt="c++" />
       <img src="https://img.shields.io/badge/html-323437?style=flat-square&logo=html5&logoColor=e2b714" alt="html" />
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/linuxify">linuxify</a></b><br>
       <sub>Make cmd and PowerShell on Windows feel like a Linux terminal: syntax colors, Linux ls, themes and fastfetch in one command</sub>
@@ -41,22 +49,12 @@
       <img src="https://img.shields.io/badge/powershell-323437?style=flat-square&logo=powershell&logoColor=e2b714" alt="powershell" />
       <img src="https://img.shields.io/badge/lua-323437?style=flat-square&logo=lua&logoColor=e2b714" alt="lua" />
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/Converterw">Converterw</a></b><br>
       <sub>Mp3/Mp4 downloader for myself but also work for other pc too (side project)</sub>
       <br><br>
       <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
       <img src="https://img.shields.io/badge/powershell-323437?style=flat-square&logo=powershell&logoColor=e2b714" alt="powershell" />
-      <img src="https://img.shields.io/badge/batchfile-323437?style=flat-square" alt="batchfile" />
-    </td>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/codeblocks-dark">codeblocks-dark</a></b><br>
-      <sub>One-command dark themes for Code::Blocks on Windows, with live terminal previews</sub>
-      <br><br>
-      <img src="https://img.shields.io/badge/powershell-323437?style=flat-square&logo=powershell&logoColor=e2b714" alt="powershell" />
-      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
       <img src="https://img.shields.io/badge/batchfile-323437?style=flat-square" alt="batchfile" />
     </td>
   </tr>
@@ -66,7 +64,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=5fe3f9ac" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=aa857fd9" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
