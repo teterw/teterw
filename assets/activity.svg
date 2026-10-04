@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 820 342.1320754716981" width="820" height="342.1320754716981" font-family="'Roboto Mono', 'Fira Code', Consolas, 'DejaVu Sans Mono', monospace">
 <rect width="820" height="342.1320754716981" rx="14" fill="#323437"/>
 <text x="40.0" y="44.0" font-size="20" fill="#e2b714" text-anchor="start" font-weight="700">github activity</text>
-<text x="780.0" y="44.0" font-size="15" fill="#646669" text-anchor="end">705 contributions in the last year</text>
+<text x="780.0" y="44.0" font-size="15" fill="#646669" text-anchor="end">720 contributions in the last year</text>
 <text x="40.0" y="78.0" font-size="11" fill="#646669" text-anchor="start">oct</text>
 <rect x="40.0" y="86.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <rect x="40.0" y="100.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
@@ -378,9 +378,9 @@
 <rect x="755.0" y="142.1" width="11.0" height="11.0" rx="2" fill="#635728"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#635728;#635728;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3561;0.3590;0.3792;0.9283;0.9312;0.9514;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
 <rect x="755.0" y="156.1" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <rect x="755.0" y="170.1" width="11.0" height="11.0" rx="2" fill="#635728"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#635728;#635728;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3607;0.3636;0.3838;0.9329;0.9358;0.9561;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
-<rect x="769.0" y="86.0" width="11.0" height="11.0" rx="2" fill="#635728"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#635728;#635728;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3653;0.3682;0.3884;0.9376;0.9405;0.9607;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
+<rect x="769.0" y="86.0" width="11.0" height="11.0" rx="2" fill="#877222"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#877222;#877222;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3653;0.3682;0.3884;0.9376;0.9405;0.9607;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
 <text x="40.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">public repos</text>
-<text x="40.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">24</text>
+<text x="40.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">25</text>
 <text x="225.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">stars</text>
 <text x="225.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">1</text>
 <text x="410.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">current streak</text>
@@ -389,22 +389,22 @@
 <text x="595.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">14d</text>
 <text x="40.0" y="276.1" font-size="12" fill="#646669" text-anchor="start">top languages</text>
 <clipPath id="bar"><rect x="40" y="288.1320754716981" width="740" height="10" rx="5"/></clipPath>
-<rect x="40.0" y="288.1320754716981" width="484.9" height="10" fill="#e2b714" clip-path="url(#bar)"/>
+<rect x="40.0" y="288.1320754716981" width="461.3" height="10" fill="#e2b714" clip-path="url(#bar)"/>
 <rect x="40.0" y="312.1320754716981" width="9" height="9" rx="2" fill="#e2b714"/>
-<text x="54.0" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">typescript 65%</text>
-<rect x="524.4" y="288.1320754716981" width="146.4" height="10" fill="#d1d0c5" clip-path="url(#bar)"/>
+<text x="54.0" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">typescript 62%</text>
+<rect x="500.8" y="288.1320754716981" width="173.8" height="10" fill="#d1d0c5" clip-path="url(#bar)"/>
 <rect x="180.2" y="312.1320754716981" width="9" height="9" rx="2" fill="#d1d0c5"/>
-<text x="194.2" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">python 20%</text>
-<rect x="670.3" y="288.1320754716981" width="35.3" height="10" fill="#b6961d" clip-path="url(#bar)"/>
+<text x="194.2" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">python 23%</text>
+<rect x="674.1" y="288.1320754716981" width="33.6" height="10" fill="#b6961d" clip-path="url(#bar)"/>
 <rect x="290.6" y="312.1320754716981" width="9" height="9" rx="2" fill="#b6961d"/>
-<text x="304.6" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">kotlin 5%</text>
-<rect x="705.0" y="288.1320754716981" width="35.2" height="10" fill="#898a85" clip-path="url(#bar)"/>
+<text x="304.6" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">kotlin 4%</text>
+<rect x="707.1" y="288.1320754716981" width="33.5" height="10" fill="#898a85" clip-path="url(#bar)"/>
 <rect x="393.5" y="312.1320754716981" width="9" height="9" rx="2" fill="#898a85"/>
-<text x="407.5" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">powershell 5%</text>
-<rect x="739.7" y="288.1320754716981" width="21.9" height="10" fill="#8a7626" clip-path="url(#bar)"/>
+<text x="407.5" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">powershell 4%</text>
+<rect x="740.1" y="288.1320754716981" width="20.9" height="10" fill="#8a7626" clip-path="url(#bar)"/>
 <rect x="526.2" y="312.1320754716981" width="9" height="9" rx="2" fill="#8a7626"/>
 <text x="540.2" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">rust 3%</text>
-<rect x="761.1" y="288.1320754716981" width="19.4" height="10" fill="#646669" clip-path="url(#bar)"/>
+<rect x="760.5" y="288.1320754716981" width="20.0" height="10" fill="#646669" clip-path="url(#bar)"/>
 <rect x="614.3" y="312.1320754716981" width="9" height="9" rx="2" fill="#646669"/>
 <text x="628.3" y="321.1" font-size="12" fill="#d1d0c5" text-anchor="start">shell 3%</text>
 </svg>
