@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=91814f04" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=9bedbcd0" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
 </p>
 
 <p align="center">
@@ -27,6 +27,15 @@
 <table>
   <tr>
     <td width="50%" valign="top">
+      <b><a href="https://github.com/teterw/meterly">meterly</a></b><br>
+      <sub>No description yet.</sub>
+      <br><br>
+      <img src="https://img.shields.io/badge/typescript-323437?style=flat-square&logo=typescript&logoColor=e2b714" alt="typescript" />
+      <img src="https://img.shields.io/badge/css-323437?style=flat-square&logo=css&logoColor=e2b714" alt="css" />
+      <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
+      <a href="https://meterly-tau.vercel.app"><img src="https://img.shields.io/badge/live_site-e2b714?style=flat-square&logo=vercel&logoColor=323437" alt="live site" /></a>
+    </td>
+    <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/itcamp22final">itcamp22final</a></b><br>
       <sub>No description yet.</sub>
       <br><br>
@@ -34,6 +43,8 @@
       <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
       <img src="https://img.shields.io/badge/html-323437?style=flat-square&logo=html5&logoColor=e2b714" alt="html" />
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/doodeeprototype">doodeeprototype</a></b><br>
       <sub>No description yet.</sub>
@@ -42,21 +53,11 @@
       <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
       <img src="https://img.shields.io/badge/css-323437?style=flat-square&logo=css&logoColor=e2b714" alt="css" />
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/chiron-stick">chiron-stick</a></b><br>
       <sub>Portable Linux "PC doctor" on a USB SSD: boot it, check the hardware, unplug, leave no trace.</sub>
       <br><br>
       <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
-      <img src="https://img.shields.io/badge/shell-323437?style=flat-square&logo=gnubash&logoColor=e2b714" alt="shell" />
-    </td>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/wallrice">wallrice</a></b><br>
-      <sub>The whole Linux desktop takes its colours from the wallpaper: animated picker with live theme preview, swww-style transitions, curated wallpaper collections with a Yes/No review. GNOME first, portable backends.</sub>
-      <br><br>
-      <img src="https://img.shields.io/badge/python-323437?style=flat-square&logo=python&logoColor=e2b714" alt="python" />
-      <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
       <img src="https://img.shields.io/badge/shell-323437?style=flat-square&logo=gnubash&logoColor=e2b714" alt="shell" />
     </td>
   </tr>
@@ -66,7 +67,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=e5e2b2f0" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=cc7b622c" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
