@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=8d6bd0b6" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=3ab20cbd" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=b64b1ba5" width="100%" alt="monkeytype personal bests" /></a>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=68633faa" width="100%" alt="monkeytype personal bests" /></a>
 </p>
 
 <p align="center">
@@ -27,6 +27,12 @@
 <table>
   <tr>
     <td width="50%" valign="top">
+      <b><a href="https://github.com/teterw/water.github.io">water.github.io</a></b><br>
+      <sub>No description yet.</sub>
+      <br><br>
+      <img src="https://img.shields.io/badge/html-323437?style=flat-square&logo=html5&logoColor=e2b714" alt="html" />
+    </td>
+    <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/catsole">catsole</a></b><br>
       <sub>USB-tethered Arduino desk display: synced song lyrics or live PC stats on an OLED screen, switched with an NFC tap.</sub>
       <br><br>
@@ -34,6 +40,8 @@
       <img src="https://img.shields.io/badge/c%2B%2B-323437?style=flat-square&logo=cplusplus&logoColor=e2b714" alt="c++" />
       <img src="https://img.shields.io/badge/html-323437?style=flat-square&logo=html5&logoColor=e2b714" alt="html" />
     </td>
+  </tr>
+  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/meterly">meterly</a></b><br>
       <sub>No description yet.</sub>
@@ -43,8 +51,6 @@
       <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
       <a href="https://meterly-tau.vercel.app"><img src="https://img.shields.io/badge/live_site-e2b714?style=flat-square&logo=vercel&logoColor=323437" alt="live site" /></a>
     </td>
-  </tr>
-  <tr>
     <td width="50%" valign="top">
       <b><a href="https://github.com/teterw/itcamp22final">itcamp22final</a></b><br>
       <sub>No description yet.</sub>
@@ -53,14 +59,6 @@
       <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
       <img src="https://img.shields.io/badge/html-323437?style=flat-square&logo=html5&logoColor=e2b714" alt="html" />
     </td>
-    <td width="50%" valign="top">
-      <b><a href="https://github.com/teterw/doodeeprototype">doodeeprototype</a></b><br>
-      <sub>No description yet.</sub>
-      <br><br>
-      <img src="https://img.shields.io/badge/typescript-323437?style=flat-square&logo=typescript&logoColor=e2b714" alt="typescript" />
-      <img src="https://img.shields.io/badge/javascript-323437?style=flat-square&logo=javascript&logoColor=e2b714" alt="javascript" />
-      <img src="https://img.shields.io/badge/css-323437?style=flat-square&logo=css&logoColor=e2b714" alt="css" />
-    </td>
   </tr>
 </table>
 <!-- PROJECTS:END -->
@@ -68,7 +66,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=a6a65187" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=22f6d5ac" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
