@@ -379,12 +379,13 @@
 <rect x="755.0" y="170.1" width="11.0" height="11.0" rx="2" fill="#635728"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#635728;#635728;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3615;0.3644;0.3846;0.9337;0.9366;0.9569;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
 <rect x="769.0" y="86.0" width="11.0" height="11.0" rx="2" fill="#635728"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#635728;#635728;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3657;0.3686;0.3888;0.9380;0.9409;0.9611;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
 <rect x="769.0" y="100.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
+<rect x="769.0" y="114.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <text x="40.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">public repos</text>
 <text x="40.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">26</text>
 <text x="225.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">stars</text>
 <text x="225.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">1</text>
 <text x="410.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">current streak</text>
-<text x="410.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">9d</text>
+<text x="410.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">0d</text>
 <text x="595.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">longest streak</text>
 <text x="595.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">14d</text>
 <text x="40.0" y="276.1" font-size="12" fill="#646669" text-anchor="start">top languages</text>
