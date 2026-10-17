@@ -383,6 +383,7 @@
 <rect x="769.0" y="128.1" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <rect x="769.0" y="142.1" width="11.0" height="11.0" rx="2" fill="#b4951b"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#b4951b;#b4951b;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3617;0.3646;0.3848;0.9339;0.9368;0.9571;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
 <rect x="769.0" y="156.1" width="11.0" height="11.0" rx="2" fill="#635728"><animate attributeName="fill" values="#2c2e31;#2c2e31;#ffd84a;#635728;#635728;#ffd84a;#2c2e31;#2c2e31" keyTimes="0.0000;0.3658;0.3687;0.3889;0.9381;0.9410;0.9612;1.0000" dur="17.3s" repeatCount="indefinite"/></rect>
+<rect x="769.0" y="170.1" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <text x="40.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">public repos</text>
 <text x="40.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">26</text>
 <text x="225.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">stars</text>
