@@ -383,6 +383,7 @@
 <rect x="769.0" y="114.0" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <rect x="769.0" y="128.1" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <rect x="769.0" y="142.1" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
+<rect x="769.0" y="156.1" width="11.0" height="11.0" rx="2" fill="#2c2e31"></rect>
 <text x="40.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">public repos</text>
 <text x="40.0" y="246.1" font-size="22" fill="#d1d0c5" text-anchor="start">26</text>
 <text x="225.0" y="218.1" font-size="12" fill="#646669" text-anchor="start">stars</text>
