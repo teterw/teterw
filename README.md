@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=9870d7a7" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
+  <a href="https://monkeytype.com/"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/typing.svg?v=e7906fb9" width="100%" alt="hello, i'm teterw, a student at assumption college thonburi. i'm into tech and always learning something new by building projects. i'm a hobbyist with a ton of hobbies, and i'm also addicted to typing. live personal bests below." /></a>
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=1ceabc6e" width="100%" alt="monkeytype personal bests" /></a>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=7a370d44" width="100%" alt="monkeytype personal bests" /></a>
 </p>
 
 <p align="center">
@@ -66,7 +66,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=f5b95d1e" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=9bd11b24" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
