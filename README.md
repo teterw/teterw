@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=eea5e1f5" width="100%" alt="monkeytype personal bests" /></a>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=aa0cd6f8" width="100%" alt="monkeytype personal bests" /></a>
 </p>
 
 <p align="center">
@@ -66,7 +66,7 @@
 ### `activity`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=ac796bb0" width="100%" alt="github activity" />
+  <img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/activity.svg?v=59454fc5" width="100%" alt="github activity" />
 </p>
 
 ### `contact`
