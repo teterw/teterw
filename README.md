@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=26a9eba7" width="100%" alt="monkeytype personal bests" /></a>
+  <a href="https://monkeytype.com/profile/teterw"><img src="https://raw.githubusercontent.com/teterw/teterw/main/assets/monkeytype.svg?v=65fcea40" width="100%" alt="monkeytype personal bests" /></a>
 </p>
 
 <p align="center">
